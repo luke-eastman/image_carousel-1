@@ -1,0 +1,24 @@
+{
+  "name": "image_carousel",
+  "version": "1.0.0",
+  "description": "Image Carousel",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon ./Server/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hrr48-fec02-brucequalis/image_carousel.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hrr48-fec02-brucequalis/image_carousel/issues"
+  },
+  "homepage": "https://github.com/hrr48-fec02-brucequalis/image_carousel#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "nodemon": "^2.0.4"
+  }
+}
