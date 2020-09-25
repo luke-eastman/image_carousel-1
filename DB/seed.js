@@ -10,11 +10,58 @@ var realData = [
     _id: 1,
     product: 'standard-fit-hoodied-sweatshirt',
     imageName: 'stock-studio-image',
-  color: 'baby blue',
-  url: 'https://target-image-carousel.s3-us-west-1.amazonaws.com/Screen+Shot+2020-09-24+at+5.20.35+PM.png',
-  alt: 'baby-blue-sweatshirt'}
-//insert in other datapoints
-
+    color: 'baby blue',
+    url: 'https://target-image-carousel.s3-us-west-1.amazonaws.com/Screen+Shot+2020-09-24+at+5.20.35+PM.png',
+    alt: 'baby-blue-sweatshirt'
+  },
+  {
+    _id: 2,
+    product: 'standard-fit-hoodied-sweatshirt',
+    imageName: 'girl-modelingSS1',
+    color: 'all',
+    url: 'https://target-image-carousel.s3-us-west-1.amazonaws.com/Screen+Shot+2020-09-24+at+5.20.58+PM.png',
+    alt: 'baby-blue-sweatshirt'
+  },
+  {
+    _id: 3,
+    product: 'standard-fit-hoodied-sweatshirt',
+    imageName: 'girl-modelingSS2',
+    color: 'all',
+    url: 'https://target-image-carousel.s3-us-west-1.amazonaws.com/Screen+Shot+2020-09-24+at+5.21.10+PM.png',
+    alt: 'baby-blue-sweatshirt'
+  },
+  {
+    _id: 4,
+    product: 'standard-fit-hoodied-sweatshirt',
+    imageName: 'girl-modelingSS3',
+    color: 'all',
+    url: 'https://target-image-carousel.s3-us-west-1.amazonaws.com/Screen+Shot+2020-09-24+at+5.21.25+PM.png',
+    alt: 'baby-blue-sweatshirt'
+  },
+  {
+    _id: 5,
+    product: 'standard-fit-hoodied-sweatshirt',
+    imageName: 'girl-modelingSS4',
+    color: 'all',
+    url: 'https://target-image-carousel.s3-us-west-1.amazonaws.com/Screen+Shot+2020-09-24+at+5.21.39+PM.png',
+    alt: 'baby-blue-sweatshirt'
+  },
+  {
+    _id: 6,
+    product: 'standard-fit-hoodied-sweatshirt',
+    imageName: 'girl-modelingSS5',
+    color: 'all',
+    url: 'https://target-image-carousel.s3-us-west-1.amazonaws.com/Screen+Shot+2020-09-24+at+5.21.52+PM.png',
+    alt: 'baby-blue-sweatshirt'
+  },
+  {
+    _id: 7,
+    product: 'standard-fit-hoodied-sweatshirt',
+    imageName: 'girl-modelingSS6',
+    color: 'all',
+    url: 'https://target-image-carousel.s3-us-west-1.amazonaws.com/Screen+Shot+2020-09-24+at+5.22.04+PM.png',
+    alt: 'baby-blue-sweatshirt'
+  }
 ]
 
 
@@ -49,14 +96,14 @@ var fakeImageDataCreator = function(numberOfEnries) {
 
 var fakeData = fakeImageDataCreator(600);
 
-console.log(fakeData);
+// console.log(fakeData);
 
 
 //TODO - function to insert into db
 
 const insertImageData = function(dataArray) {
   Image.create(dataArray)
-    .then(() => db.disconnect());
+    .then(() => db.close());
 };
 
 insertImageData(fakeData);
