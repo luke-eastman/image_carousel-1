@@ -11,8 +11,23 @@ app.get('/', (req, res) => {
   res.end('Baby Steps!')
 })
 
-app.get('/carousel', function(req, res) {
+app.get('/api/products', function(req, res) {
   Image.find({}, function(err, result) {
+    if (err) {
+    throw err;
+  } else {
+    res.send(result);
+  }
+  })
+});
+
+app.get('/api/products/product/carousel', function(req, res) {
+  Image.find({
+    $and: [
+      { $or: [ { color: 'baby blue' }, { color : 'all' } ] },
+      { product: 'standard-fit-hoodied-sweatshirt'}
+    ]
+}, function(err, result) {
     if (err) {
     throw err;
   } else {

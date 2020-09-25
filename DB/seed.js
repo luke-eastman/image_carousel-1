@@ -88,7 +88,7 @@ var imageRandomizer = function (array) {
 var fakeImageDataCreator = function(numberOfEnries) {
 
   var dataEntries = [];
-  for (var i = 8; i < numberOfEnries + 8; i++) {
+  for (var i = 7; i < numberOfEnries + 7; i++) {
     dataEntries.push({
        _id: (i + 1),
        product: faker.commerce.productName(),
@@ -110,8 +110,10 @@ console.log(fakeData);
 
 const insertImageData = function(dataArray) {
   Image.create(dataArray)
-    .then(() => db.close());
+
 };
 
-insertImageData(fakeData);
 insertImageData(realData);
+
+insertImageData(fakeData);
+
