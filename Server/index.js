@@ -4,8 +4,10 @@ const port = 8080;
 const Image = require('../DB/image.js')
 const bodyParser = require('body-parser')
 app.use(express.json());
-// X
+const path = require('path');
 
+
+app.use(express.static(path.join(__dirname, 'Public/index.html')));
 
 app.get('/', (req, res) => {
   res.end('Baby Steps!')
