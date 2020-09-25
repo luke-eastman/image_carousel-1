@@ -68,7 +68,6 @@ var realData = [
     alt: "baby-blue-sweatshirt",
     __v: 0
 }
-
 ]
 
 
@@ -103,7 +102,7 @@ var fakeImageDataCreator = function(numberOfEnries) {
 
 var fakeData = fakeImageDataCreator(600);
 
-console.log(fakeData);
+// console.log(fakeData);
 
 
 //TODO - function to insert into db
