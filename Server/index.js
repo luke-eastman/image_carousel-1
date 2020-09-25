@@ -23,11 +23,15 @@ app.get('/api/products', function(req, res) {
   })
 });
 
-app.get('/api/products/product/carousel', function(req, res) {
+app.get('/api/products/:product/:color/carousel', function(req, res) {
+  var productParam = req.params.product;
+  var colorParam = req.params.color;
+  debugger;
   Image.find({
+
     $and: [
-      { $or: [ { color: 'baby blue' }, { color : 'all' } ] },
-      { product: 'standard-fit-hoodied-sweatshirt'}
+      { $or: [ { color: colorParam }, { color : 'all' } ] },
+      { product: productParam}
     ]
 }, function(err, result) {
     if (err) {
