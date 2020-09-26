@@ -7,7 +7,7 @@ app.use(express.json());
 const path = require('path');
 
 
-app.use(express.static(path.join(__dirname, '/../dist')));
+app.use(express.static(path.join(__dirname, '/../Client/dist')));
 
 app.get('/', (req, res) => {
   res.end('Baby Steps!')
