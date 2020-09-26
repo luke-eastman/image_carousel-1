@@ -102,10 +102,6 @@ var fakeImageDataCreator = function(numberOfEnries) {
 
 var fakeData = fakeImageDataCreator(600);
 
-// console.log(fakeData);
-
-
-//TODO - function to insert into db
 
 const insertImageData = function(dataArray) {
   Image.create(dataArray)
