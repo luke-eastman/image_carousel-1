@@ -1,6 +1,6 @@
 import React from 'react';
 import MainImage from './mainImage.jsx'
-
+import SideBar from './sideBar.jsx';
 
 class App extends React.Component {
   constructor(props) {
@@ -34,6 +34,9 @@ class App extends React.Component {
 
     return (
       <div>
+        <div>
+          <SideBar imageList={this.state.imageList}/>
+        </div>
         <MainImage />
 
       </div>
