@@ -10,7 +10,7 @@ var realData = [
     _id: 1,
     product: 'standard-fit-hoodied-sweatshirt',
     imageName: 'stock-studio-image',
-    color: 'baby blue',
+    color: 'baby-blue',
     url: 'https://target-image-carousel.s3-us-west-1.amazonaws.com/Screen+Shot+2020-09-24+at+5.20.35+PM.png',
     alt: 'baby-blue-sweatshirt'
   },
@@ -90,9 +90,9 @@ var fakeImageDataCreator = function(numberOfEnries) {
   for (var i = 7; i < numberOfEnries + 7; i++) {
     dataEntries.push({
        _id: (i + 1),
-       product: faker.commerce.productName(),
+       product: faker.commerce.productName().split(' ').join('-'),
        imageName: faker.commerce.productDescription(),
-       color: faker.commerce.color(),
+       color: faker.commerce.color().split(' ').join('-'),
        url: 'https://target-image-carousel.s3-us-west-1.amazonaws.com/' + imageRandomizer(randomImageUrls),
        alt: faker.image.abstract()
     })
@@ -109,7 +109,7 @@ var fakeData = fakeImageDataCreator(600);
 
 const insertImageData = function(dataArray) {
   Image.create(dataArray)
-
+  .then(() => db.close())
 };
 
 insertImageData(realData);
