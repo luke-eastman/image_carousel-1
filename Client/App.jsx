@@ -6,23 +6,26 @@ class App extends React.Component {
   constructor(props) {
     super(props)
       this.state = {
-        imageList: []
+        imageList: [],
+        clickedImage: 1
       }
   }
 
 
+  // changeClickedImage
 
 
   getImagesForEndpoint() {
     fetch('http://localhost:8080/api/products/standard-fit-hoodied-sweatshirt/baby-blue/carousel')
     .then(res => res.json())
     .then((images) => {
-
+      console.log(images);
       this.setState({
         imageList: images
       })
     })
     .catch(err => console.log(err))
+
   }
 
 
@@ -37,8 +40,9 @@ class App extends React.Component {
         <div>
           <SideBar imageList={this.state.imageList}/>
         </div>
-        <MainImage />
-
+        <div>
+          <MainImage image={this.state.imageList.filter((image) => {image._id === 1 })}/>
+        </div>
       </div>
     )
 
