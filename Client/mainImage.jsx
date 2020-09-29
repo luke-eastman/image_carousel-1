@@ -17,9 +17,13 @@ class MainImage extends React.Component {
 
     return (
 
-      <div id="mainImage">
       <div>
-        <img src="https://target-image-carousel.s3-us-west-1.amazonaws.com/Screen+Shot+2020-09-24+at+5.20.35+PM.png" ></img>
+      <div>
+        <img
+          className="mainImage"
+          src={this.props.image.url}
+         alt={this.props.image.alt}
+         ></img>
       </div>
       <div>
         <h3>Main Image here</h3>

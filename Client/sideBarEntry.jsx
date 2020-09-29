@@ -6,15 +6,11 @@ class SideBarEntry extends React.Component {
   }
 
 
-
-
-
-
   render () {
 
     return (
-      <div className="SideBarEntry">
-        <img src={this.props.image.url}></img>
+      <div >
+        <img className="SideBarEntry" src={this.props.image.url}></img>
 
 
       </div>

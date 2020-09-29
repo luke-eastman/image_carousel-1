@@ -26,7 +26,7 @@ app.get('/api/products', function(req, res) {
 app.get('/api/products/:product/:color/carousel', function(req, res) {
   var productParam = req.params.product;
   var colorParam = req.params.color;
-
+    debugger;
   Image.find({
 
     $and: [
@@ -39,9 +39,15 @@ app.get('/api/products/:product/:color/carousel', function(req, res) {
   } else {
     res.send(result);
   }
-  })
+  });
+  debugger;
 });
 
 app.listen(port, () => {
   console.log('Listening on port 8080...')
 })
+
+
+module.exports = app;
+
+

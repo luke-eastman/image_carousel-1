@@ -1,16 +1,28 @@
-#mainImage {
+.smallCarousel {
+  display: flex;
+}
+
+.mainImage {
   border: 5px solid red;
+  width: 200px;
+}
+
+.sideBarEntry {
+  max-width: 100px;
+  max-height: 100px;
 }
 
 h3 {
   padding: 20px;
 }
 
-/* .sideBarEntry {
-  height: 100px;
-  width:100px;
+/* #app {
+  display: flex
 } */
 
-img {
-  width: 150px;
+
+
+img{
+  max-width: 100px;
+  max-height: 100px;
 }

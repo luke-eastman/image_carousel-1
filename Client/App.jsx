@@ -7,7 +7,7 @@ class App extends React.Component {
     super(props)
       this.state = {
         imageList: [],
-        clickedImage: 1
+        clickedImageId: {}
       }
   }
 
@@ -16,13 +16,17 @@ class App extends React.Component {
 
 
   getImagesForEndpoint() {
+    // debugger;
     fetch('http://localhost:8080/api/products/standard-fit-hoodied-sweatshirt/baby-blue/carousel')
     .then(res => res.json())
     .then((images) => {
       console.log(images);
+      // debugger;
       this.setState({
-        imageList: images
+        imageList: images,
+        clickedImageId: images[0]
       })
+
     })
     .catch(err => console.log(err))
 
@@ -36,12 +40,15 @@ class App extends React.Component {
   render () {
 
     return (
-      <div>
-        <div>
+      <div className="smallCarousel">
+        <div className="sideBar">
           <SideBar imageList={this.state.imageList}/>
         </div>
+        {/* <div {...this.state.imageList.filter((image) => {
+              image._id = this.state.clickedImageId
+            }).map(filteredImage => <MainImage filteredImage={filteredImage}/>)} */}
         <div>
-          <MainImage image={this.state.imageList.filter((image) => {image._id === 1 })}/>
+          <MainImage image={this.state.clickedImageId}/>
         </div>
       </div>
     )
