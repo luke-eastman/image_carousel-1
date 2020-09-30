@@ -38,10 +38,6 @@ class App extends React.Component {
 
   }
 
-  imageClick() {
-
-  }
-
   componentDidMount() {
     this.getImagesForEndpoint()
   }
@@ -49,7 +45,7 @@ class App extends React.Component {
   render () {
     return ( this.state.imageList.length > 0 ? <div className="smallCarousel">
         <div className="sideBar">
-          <SideBar imageList={this.state.imageList.slice(0, 5)}/>
+          <SideBar imageList={this.state.imageList.slice(0, 5)} changeMainImage={this.changeMainImage.bind(this)}/>
         </div>
         <div>
           <MainImage image={this.state.imageList.filter((image) =>

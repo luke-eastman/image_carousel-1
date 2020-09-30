@@ -5,12 +5,21 @@ class SideBarEntry extends React.Component {
 
   }
 
+  handleClick() {
+    this.props.changeMainImage(this.props.image._id)
+  }
 
   render () {
 
     return (
       <div >
-        <img className="SideBarEntry" src={this.props.image.url}></img>
+        <img
+          className="SideBarEntry"
+          src={this.props.image.url}
+          onClick={this.handleClick.bind(this)}
+          >
+
+          </img>
 
 
       </div>

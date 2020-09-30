@@ -6,6 +6,7 @@ const SideBar = (props) => (
    {props.imageList.map(image =>
       <SideBarEntry
         image={image}
+        changeMainImage={props.changeMainImage}
       />
     )}
 </div>

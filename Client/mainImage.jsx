@@ -19,7 +19,6 @@ class MainImage extends React.Component {
           src={this.props.image.url}
          alt={this.props.image.alt}
          ></img>
-         Test area
       </div>
 
       </div>
