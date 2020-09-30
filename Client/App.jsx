@@ -9,12 +9,16 @@ class App extends React.Component {
     super(props)
       this.state = {
         imageList: [],
-        mainImageId: 1
+        mainImageId: "5f743973c775129696d110f5"
       }
   }
 
 
-  // changeClickedImage
+  changeMainImage(imageID) {
+    this.setState({
+      mainImageId: imageID
+    })
+  }
 
 
   getImagesForEndpoint() {
@@ -50,11 +54,7 @@ class App extends React.Component {
         <div>
           <MainImage image={this.state.imageList.filter((image) =>
 
-            {
-              debugger;
-              console.log(image);
-              console.log(this.state.mainImageId)
-              image._id === this.state.mainImageId})}/>
+            { return image._id === this.state.mainImageId})[0]}/>
         </div>
       </div> : null
     )
