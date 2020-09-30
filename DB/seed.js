@@ -7,7 +7,6 @@ const faker = require('faker');
 
 var realData = [
   {
-    _id: 1,
     product: 'standard-fit-hoodied-sweatshirt',
     imageName: 'stock-studio-image',
     color: 'baby-blue',
@@ -15,7 +14,6 @@ var realData = [
     alt: 'baby-blue-sweatshirt'
   },
   {
-    _id: 2,
     product: "standard-fit-hoodied-sweatshirt",
     imageName: "girl-modelingSS1",
     color: "all",
@@ -24,7 +22,6 @@ var realData = [
     __v: 0
 },
 {
-    _id: 3,
     product: "standard-fit-hoodied-sweatshirt",
     imageName: "girl-modelingSS2",
     color: "all",
@@ -33,7 +30,6 @@ var realData = [
     __v: 0
 },
 {
-    _id: 4,
     product: "standard-fit-hoodied-sweatshirt",
     imageName: "girl-modelingSS3",
     color: "all",
@@ -42,7 +38,6 @@ var realData = [
     __v: 0
 },
 {
-    _id: 5,
     product: "standard-fit-hoodied-sweatshirt",
     imageName: "girl-modelingSS4",
     color: "all",
@@ -51,7 +46,6 @@ var realData = [
     __v: 0
 },
 {
-    _id: 6,
     product: "standard-fit-hoodied-sweatshirt",
     imageName: "girl-modelingSS5",
     color: "all",
@@ -60,7 +54,6 @@ var realData = [
     __v: 0
 },
 {
-    _id: 7,
     product: "standard-fit-hoodied-sweatshirt",
     imageName: "girl-modelingSS6",
     color: "all",
@@ -89,7 +82,6 @@ var fakeImageDataCreator = function(numberOfEnries) {
   var dataEntries = [];
   for (var i = 7; i < numberOfEnries + 7; i++) {
     dataEntries.push({
-       _id: (i + 1),
        product: faker.commerce.productName().split(' ').join('-'),
        imageName: faker.commerce.productDescription(),
        color: faker.commerce.color().split(' ').join('-'),
@@ -102,10 +94,6 @@ var fakeImageDataCreator = function(numberOfEnries) {
 
 var fakeData = fakeImageDataCreator(600);
 
-// console.log(fakeData);
-
-
-//TODO - function to insert into db
 
 const insertImageData = function(dataArray) {
   Image.create(dataArray)

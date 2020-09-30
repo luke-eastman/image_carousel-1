@@ -5,7 +5,6 @@ const db = require('./index.js')
 
 
 let imageSchema = new mongoose.Schema({
-  _id: Number,
   product: String,
   imageName: String,
   color: String,
