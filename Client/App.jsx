@@ -2,12 +2,14 @@ import React from 'react';
 import MainImage from './mainImage.jsx'
 import SideBar from './sideBar.jsx';
 
+
+
 class App extends React.Component {
   constructor(props) {
     super(props)
       this.state = {
         imageList: [],
-        clickedImageId: {}
+        mainImageId: 1
       }
   }
 
@@ -24,7 +26,7 @@ class App extends React.Component {
       // debugger;
       this.setState({
         imageList: images,
-        clickedImageId: images[0]
+        sideBarImages: images.slice(0, 5)
       })
 
     })
@@ -32,28 +34,36 @@ class App extends React.Component {
 
   }
 
+  imageClick() {
+
+  }
 
   componentDidMount() {
     this.getImagesForEndpoint()
   }
 
   render () {
-
-    return (
-      <div className="smallCarousel">
+    return ( this.state.imageList.length > 0 ? <div className="smallCarousel">
         <div className="sideBar">
-          <SideBar imageList={this.state.imageList}/>
+          <SideBar imageList={this.state.imageList.slice(0, 5)}/>
         </div>
-        {/* <div {...this.state.imageList.filter((image) => {
-              image._id = this.state.clickedImageId
-            }).map(filteredImage => <MainImage filteredImage={filteredImage}/>)} */}
         <div>
-          <MainImage image={this.state.clickedImageId}/>
-        </div>
-      </div>
-    )
+          <MainImage image={this.state.imageList.filter((image) =>
 
+            {
+              debugger;
+              console.log(image);
+              console.log(this.state.mainImageId)
+              image._id === this.state.mainImageId})}/>
+        </div>
+      </div> : null
+    )
   }
 }
 
 export default App;
+
+
+<div>
+
+</div>

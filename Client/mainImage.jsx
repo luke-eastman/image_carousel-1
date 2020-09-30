@@ -8,11 +8,6 @@ class MainImage extends React.Component {
 
   }
 
-
-
-
-
-
   render () {
 
     return (
@@ -24,10 +19,9 @@ class MainImage extends React.Component {
           src={this.props.image.url}
          alt={this.props.image.alt}
          ></img>
+         Test area
       </div>
-      <div>
-        <h3>Main Image here</h3>
-      </div>
+
       </div>
     )
 
