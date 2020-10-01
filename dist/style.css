@@ -42,7 +42,7 @@ h3 {
 
 figure {
   width: 600px;
-  background-repeat: no-repeat;
+  /* background-repeat: no-repeat; */
 }
 
 figure:hover img {

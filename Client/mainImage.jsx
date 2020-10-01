@@ -16,7 +16,8 @@ class MainImage extends React.Component {
     const x = (e.pageX - left) / width * 100;
     const y = (e.pageY - top) / height * 100;
     this.setState({
-      backgroundPosition: x + '% ' + y + '%'
+      backgroundPosition: x + '% ' + y + '%',
+      backgroundImage: `url(${this.props.image.url})`
     })
   }
 
