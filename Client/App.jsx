@@ -11,10 +11,7 @@ class App extends React.Component {
         imageList: [],
         mainImageId: "5f743973c775129696d110f5",
         mainImageIndex: 0,
-        mainImageClicked: false,
-        lastBTNCLicked: false,
-        nextBTNCLicked: false,
-
+        mainImageClicked: false
       }
   }
 
@@ -40,13 +37,15 @@ class App extends React.Component {
 
   nextImage() {
     this.setState({
-      nextBTNCLicked: true
+      mainImageIndex: this.state.mainImageIndex + 1,
+      mainImageId: this.state.imageList[this.state.mainImageIndex + 1]._id
     })
   }
 
   lastImage() {
     this.setState({
-      lastBTNCLicked: true
+      mainImageIndex: this.state.mainImageIndex - 1,
+      mainImageId: this.state.imageList[this.state.mainImageIndex -1]._id
     })
   }
   getImagesForEndpoint() {
