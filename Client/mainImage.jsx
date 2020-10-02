@@ -20,7 +20,9 @@ class MainImage extends React.Component {
       backgroundImage: `url(${this.props.image.url})`
     })
   }
-
+  handleClick() {
+    this.props.clickMainImageForPopOut()
+  }
 
   render () {
 
@@ -28,7 +30,7 @@ class MainImage extends React.Component {
 
 
       <div>
-      <figure onMouseMove={this.handleMouseMove.bind(this)} style={this.state}>
+      <figure onClick={this.handleClick.bind(this)} onMouseMove={this.handleMouseMove.bind(this)} style={this.state}>
         <img
           className="mainImage"
           src={this.props.image.url}
