@@ -43,12 +43,6 @@ app.get('/api/products/:product/:color/carousel', function(req, res) {
 });
 
 
-
-// app.listen(port, () => {
-//   console.log('Listening on port 8080...')
-// })
-
-
 module.exports = app;
 
 

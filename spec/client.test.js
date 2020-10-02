@@ -62,8 +62,4 @@ describe('SideBar', () => {
    expect(wrapper.find('img')).toHaveLength(1)
   })
 
-  //update on click
-  //zooms in
-  //changes view
-  //main image clicked
 })

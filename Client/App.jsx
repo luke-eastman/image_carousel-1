@@ -56,6 +56,7 @@ class App extends React.Component {
     if (this.state.mainImageClicked === true) {
       return <PopOut changeViewBack={this.changeViewBack.bind(this)}/>
     } else if (this.state.mainImageClicked === false) {
+         //if the image list exists render the carousel
          return this.state.imageList.length > 0 ? <div className="smallCarousel">
         <div className="sideBar">
           <SideBar imageList={this.state.imageList.slice(0, 5)} changeMainImage={this.changeMainImage.bind(this)}/>
@@ -70,7 +71,7 @@ class App extends React.Component {
   }
 
   render () {
-    //if the image list exists render the carousel
+
     return (
       <div>
       {this.renderView()}
