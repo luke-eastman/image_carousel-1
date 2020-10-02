@@ -1,4 +1,6 @@
 import React from 'react';
+import BigImage from './PopOutBigImage.jsx';
+import Exit from './Exit.jsx'
 
 class PopOut extends React.Component {
   constructor(props) {
@@ -10,7 +12,10 @@ class PopOut extends React.Component {
 
     render() {
       return (
-        <div>Pop Out Has Rendered</div>
+        <div>
+          <Exit changeViewBack={this.props.changeViewBack}/>
+          <BigImage />
+        </div>
       )
     }
   }

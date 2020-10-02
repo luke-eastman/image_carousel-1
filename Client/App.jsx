@@ -14,6 +14,12 @@ class App extends React.Component {
       }
   }
 
+  changeViewBack() {
+    this.setState({
+      mainImageClicked: false
+    })
+  }
+
 
   changeMainImage(imageID) {
     this.setState({
@@ -48,7 +54,7 @@ class App extends React.Component {
 
   renderView() {
     if (this.state.mainImageClicked === true) {
-      return <PopOut />
+      return <PopOut changeViewBack={this.changeViewBack.bind(this)}/>
     } else if (this.state.mainImageClicked === false) {
          return this.state.imageList.length > 0 ? <div className="smallCarousel">
         <div className="sideBar">
