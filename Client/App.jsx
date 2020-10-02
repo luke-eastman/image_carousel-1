@@ -1,7 +1,7 @@
 import React from 'react';
 import MainImage from './mainImage.jsx'
 import SideBar from './sideBar.jsx';
-
+import PopOut from './PopOut.jsx'
 
 
 class App extends React.Component {
@@ -9,8 +9,15 @@ class App extends React.Component {
     super(props)
       this.state = {
         imageList: [],
-        mainImageId: "5f743973c775129696d110f5"
+        mainImageId: "5f743973c775129696d110f5",
+        mainImageClicked: false
       }
+  }
+
+  changeViewBack() {
+    this.setState({
+      mainImageClicked: false
+    })
   }
 
 
@@ -20,14 +27,17 @@ class App extends React.Component {
     })
   }
 
+  clickMainImageForPopOut() {
+    this.setState({
+      mainImageClicked: true
+    })
+  }
 
   getImagesForEndpoint() {
-    // debugger;
     fetch('http://localhost:8080/api/products/standard-fit-hoodied-sweatshirt/baby-blue/carousel')
     .then(res => res.json())
     .then((images) => {
-      console.log(images);
-      // debugger;
+
       this.setState({
         imageList: images,
         sideBarImages: images.slice(0, 5)
@@ -42,17 +52,30 @@ class App extends React.Component {
     this.getImagesForEndpoint()
   }
 
-  render () {
-    return ( this.state.imageList.length > 0 ? <div className="smallCarousel">
+  renderView() {
+    if (this.state.mainImageClicked === true) {
+      return <PopOut changeViewBack={this.changeViewBack.bind(this)}/>
+    } else if (this.state.mainImageClicked === false) {
+         //if the image list exists render the carousel
+         return this.state.imageList.length > 0 ? <div className="smallCarousel">
         <div className="sideBar">
           <SideBar imageList={this.state.imageList.slice(0, 5)} changeMainImage={this.changeMainImage.bind(this)}/>
         </div>
         <div>
           <MainImage image={this.state.imageList.filter((image) =>
 
-            { return image._id === this.state.mainImageId})[0]}/>
+            { return image._id === this.state.mainImageId})[0]} clickMainImageForPopOut={this.clickMainImageForPopOut.bind(this)}/>
         </div>
       </div> : null
+    }
+  }
+
+  render () {
+
+    return (
+      <div>
+      {this.renderView()}
+      </div>
     )
   }
 }
@@ -60,6 +83,3 @@ class App extends React.Component {
 export default App;
 
 
-<div>
-
-</div>

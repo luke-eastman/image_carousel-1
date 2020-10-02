@@ -42,21 +42,6 @@ app.get('/api/products/:product/:color/carousel', function(req, res) {
   debugger;
 });
 
-app.get('/api/products/:', function(req, res) {
-  var param
-  Image.findOne({}, function(err, result) {
-    if (err) {
-    throw err;
-  } else {
-    res.send(result);
-  }
-  })
-});
-
-// app.listen(port, () => {
-//   console.log('Listening on port 8080...')
-// })
-
 
 module.exports = app;
 
