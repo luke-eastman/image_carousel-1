@@ -6,7 +6,8 @@ class SideBarEntry extends React.Component {
   }
 
   handleClick() {
-    this.props.changeMainImage(this.props.image._id)
+    var imageIndex = this.props.imageList.indexOf(this.props.image);
+    this.props.changeMainImage(this.props.image._id, imageIndex)
   }
 
   render () {
@@ -29,3 +30,5 @@ class SideBarEntry extends React.Component {
 }
 
 export default SideBarEntry;
+
+

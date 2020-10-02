@@ -10,9 +10,11 @@ class App extends React.Component {
       this.state = {
         imageList: [],
         mainImageId: "5f743973c775129696d110f5",
+        mainImageIndex: 0,
         mainImageClicked: false,
         lastBTNCLicked: false,
-        nextBTNCLicked: false
+        nextBTNCLicked: false,
+
       }
   }
 
@@ -23,9 +25,10 @@ class App extends React.Component {
   }
 
 
-  changeMainImage(imageID) {
+  changeMainImage(imageID, index) {
     this.setState({
-      mainImageId: imageID
+      mainImageId: imageID,
+      mainImageIndex: index
     })
   }
 

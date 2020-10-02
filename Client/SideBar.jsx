@@ -9,6 +9,7 @@ const SideBar = (props) => (
         image={image}
         changeMainImage={props.changeMainImage}
         key={image.id}
+        imageList={props.imageList}
       />
     )}
     <GreyedOutImage

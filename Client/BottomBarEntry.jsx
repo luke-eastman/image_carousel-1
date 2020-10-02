@@ -7,8 +7,9 @@ class BottomBarEntry extends React.Component {
 
   }
 
-  imageClick() {
-    this.props.changeMainImage(this.props.image._id)
+  handleClick() {
+    var imageIndex = this.props.imageList.indexOf(this.props.image);
+    this.props.changeMainImage(this.props.image._id, imageIndex)
   }
 
   render () {
@@ -19,7 +20,7 @@ class BottomBarEntry extends React.Component {
           className="BottomBarEntry"
           src={this.props.image.url}
           alt={this.props.image.alt}
-          onClick={this.imageClick.bind(this)}
+          onClick={this.handleClick.bind(this)}
           >
 
           </img>
