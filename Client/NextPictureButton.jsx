@@ -5,10 +5,14 @@ class NextPicture extends React.Component {
     super(props)
   }
 
+  handleClick() {
+    this.props.nextImage()
+  }
+
   render() {
     return (
       <div>
-        <button> N </button>
+        <button onClick={this.handleClick.bind(this)}> N </button>
       </div>
     )
   }

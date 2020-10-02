@@ -5,10 +5,14 @@ class LastPicture extends React.Component {
     super(props)
   }
 
+  handleClick() {
+    this.props.lastImage()
+  }
+
   render() {
     return (
       <div>
-        <button> L </button>
+        <button onClick={this.handleClick.bind(this)}> L </button>
       </div>
     )
   }

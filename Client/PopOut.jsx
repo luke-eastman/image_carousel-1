@@ -13,9 +13,9 @@ const PopOut = (props) => (
           </div>
           <div>
             <div className="mainCarousel">
-              <LastPicture />
+              <LastPicture lastImage={props.lastImage}/>
               <BigImage mainImage={props.mainImage}/>
-              <NextPicture />
+              <NextPicture nextImage={props.nextImage}/>
             </div>
             <div>
               <BottomBar imageList={props.imageList}

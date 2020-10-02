@@ -10,7 +10,9 @@ class App extends React.Component {
       this.state = {
         imageList: [],
         mainImageId: "5f743973c775129696d110f5",
-        mainImageClicked: false
+        mainImageClicked: false,
+        lastBTNCLicked: false,
+        nextBTNCLicked: false
       }
   }
 
@@ -33,6 +35,17 @@ class App extends React.Component {
     })
   }
 
+  nextImage() {
+    this.setState({
+      nextBTNCLicked: true
+    })
+  }
+
+  lastImage() {
+    this.setState({
+      lastBTNCLicked: true
+    })
+  }
   getImagesForEndpoint() {
     fetch('http://localhost:8080/api/products/standard-fit-hoodied-sweatshirt/baby-blue/carousel')
     .then(res => res.json())
@@ -55,9 +68,10 @@ class App extends React.Component {
     if (this.state.mainImageClicked === true) {
       return <PopOut
                 changeViewBack={this.changeViewBack.bind(this)}
-                mainImage={this.state.imageList.filter((image) =>
-                  { return image._id === this.state.mainImageId})[0]}
+                mainImage={this.state.imageList.filter((image) => { return image._id === this.state.mainImageId})[0]}
                 imageList={this.state.imageList}
+                nextImage={this.nextImage.bind(this)}
+                lastImage={this.lastImage.bind(this)}
                 changeMainImage={this.changeMainImage.bind(this)}/>
     } else if (this.state.mainImageClicked === false) {
          //if the image list exists render the carousel
