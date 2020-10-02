@@ -40,7 +40,6 @@ class App extends React.Component {
 
       this.setState({
         imageList: images,
-        sideBarImages: images.slice(0, 5)
       })
 
     })
@@ -54,12 +53,21 @@ class App extends React.Component {
 
   renderView() {
     if (this.state.mainImageClicked === true) {
-      return <PopOut changeViewBack={this.changeViewBack.bind(this)}/>
+      return <PopOut
+                changeViewBack={this.changeViewBack.bind(this)}
+                mainImage={this.state.imageList.filter((image) =>
+                  { return image._id === this.state.mainImageId})[0]}
+                imageList={this.state.imageList}
+                changeMainImage={this.changeMainImage.bind(this)}/>
     } else if (this.state.mainImageClicked === false) {
          //if the image list exists render the carousel
          return this.state.imageList.length > 0 ? <div className="smallCarousel">
         <div className="sideBar">
-          <SideBar imageList={this.state.imageList.slice(0, 5)} changeMainImage={this.changeMainImage.bind(this)}/>
+          <SideBar
+            imageList={this.state.imageList.slice(0, 4)}
+            extendImage={this.state.imageList.slice(4, 5)[0]}
+            changeMainImage={this.changeMainImage.bind(this)}
+            clickMainImageForPopOut={this.clickMainImageForPopOut.bind(this)}/>
         </div>
         <div>
           <MainImage image={this.state.imageList.filter((image) =>

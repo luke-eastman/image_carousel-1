@@ -27,17 +27,17 @@ class MainImage extends React.Component {
   render () {
 
     return (
-
-
       <div>
-      <figure onClick={this.handleClick.bind(this)} onMouseMove={this.handleMouseMove.bind(this)} style={this.state}>
-        <img
-          className="mainImage"
-          src={this.props.image.url}
-         alt={this.props.image.alt}
-         ></img>
-      </figure>
-
+        <figure
+          onClick={this.handleClick.bind(this)}
+          onMouseMove={this.handleMouseMove.bind(this)}
+          style={this.state}>
+          <img
+            className="mainImage"
+            src={this.props.image.url}
+            alt={this.props.image.alt}>
+          </img>
+        </figure>
       </div>
     )
 

@@ -1,21 +1,30 @@
 import React from 'react';
 import BigImage from './PopOutBigImage.jsx';
 import Exit from './Exit.jsx'
+import BottomBar from './BottomBar.jsx'
+import NextPicture from './NextPictureButton.jsx'
+import LastPicture from './LastPictureButton.jsx'
 
-class PopOut extends React.Component {
-  constructor(props) {
-    super(props)
+const PopOut = (props) => (
 
-    }
-    render() {
-      return (
         <div>
-          <Exit changeViewBack={this.props.changeViewBack}/>
-          <BigImage />
+          <div>
+            <Exit changeViewBack={props.changeViewBack}/>
+          </div>
+          <div>
+            <div className="mainCarousel">
+              <LastPicture />
+              <BigImage mainImage={props.mainImage}/>
+              <NextPicture />
+            </div>
+            <div>
+              <BottomBar imageList={props.imageList}
+                         changeMainImage={props.changeMainImage}/>
+            </div>
+          </div>
         </div>
-      )
-    }
-  }
+)
+
 
 
   export default PopOut;

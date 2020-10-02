@@ -1,5 +1,6 @@
 import React from 'react';
 import SideBarEntry from './sideBarEntry.jsx';
+import GreyedOutImage from './GreyedOutImage.jsx'
 
 const SideBar = (props) => (
 <div >
@@ -10,6 +11,9 @@ const SideBar = (props) => (
         key={image.id}
       />
     )}
+    <GreyedOutImage
+      extendImage={props.extendImage}
+      clickMainImageForPopOut={props.clickMainImageForPopOut}/>
 </div>
 
 )

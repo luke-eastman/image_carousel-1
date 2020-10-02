@@ -11,7 +11,9 @@ class BigImage extends React.Component {
 
   render() {
     return (
-      <img src="https://media2.giphy.com/media/3o6ozfYuxtdUTHnQQ0/giphy.gif" alt="needs-to-be-filled-in"></img>
+      <div className={"bigImageContainer"}>
+        <img className="bigImage" src={this.props.mainImage.url} alt="needs-to-be-filled-in"></img>
+      </div>
     )
   }
 }
