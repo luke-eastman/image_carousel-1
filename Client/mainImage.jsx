@@ -21,7 +21,7 @@ class MainImage extends React.Component {
     })
   }
   handleClick() {
-    this.props.clickMainImageForPopOut()
+    this.props.clickMainImageForPopOut(this.props.image._id)
   }
 
   render () {
