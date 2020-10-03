@@ -21,23 +21,23 @@ class MainImage extends React.Component {
     })
   }
   handleClick() {
-    this.props.clickMainImageForPopOut()
+    this.props.clickMainImageForPopOut(this.props.image._id)
   }
 
   render () {
 
     return (
-
-
       <div>
-      <figure onClick={this.handleClick.bind(this)} onMouseMove={this.handleMouseMove.bind(this)} style={this.state}>
-        <img
-          className="mainImage"
-          src={this.props.image.url}
-         alt={this.props.image.alt}
-         ></img>
-      </figure>
-
+        <figure
+          onClick={this.handleClick.bind(this)}
+          onMouseMove={this.handleMouseMove.bind(this)}
+          style={this.state}>
+          <img
+            className="mainImage"
+            src={this.props.image.url}
+            alt={this.props.image.alt}>
+          </img>
+        </figure>
       </div>
     )
 

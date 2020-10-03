@@ -30,7 +30,7 @@ var mockImageDataCreator = function(numberOfEnries) {
   }
 
   var mockImages = mockImageDataCreator(7);
-  var mockSideBarImages = mockImages.slice(0, 5)
+  var mockSideBarImages = mockImages.slice(0, 4)
   var mockOneImage = mockImages[0];
 
 
@@ -55,7 +55,7 @@ describe('App', () => {
 describe('SideBar', () => {
   test('should render 5 sidebar entry image components', () => {
     const wrapper = mount(<SideBar imageList={mockSideBarImages}/>);
-    expect(wrapper.find('SideBarEntry')).toHaveLength(5);
+    expect(wrapper.find('SideBarEntry')).toHaveLength(4);
   })
   test('each sidebar entry should have an img tag', () => {
     const wrapper = mount (<SideBarEntry image={mockOneImage}/>);

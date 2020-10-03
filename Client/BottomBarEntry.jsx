@@ -1,8 +1,8 @@
-import React from 'react';
-class SideBarEntry extends React.Component {
+import React from 'react'
+
+class BottomBarEntry extends React.Component {
   constructor(props) {
     super(props)
-
   }
 
   handleClick() {
@@ -15,8 +15,9 @@ class SideBarEntry extends React.Component {
     return (
       <div >
         <img
-          className="SideBarEntry"
+          className="BottomBarEntry"
           src={this.props.image.url}
+          alt={this.props.image.alt}
           onClick={this.handleClick.bind(this)}
           >
           </img>
@@ -24,8 +25,4 @@ class SideBarEntry extends React.Component {
     )
   }
 }
-
-export default SideBarEntry;
-
-
-
+export default BottomBarEntry;

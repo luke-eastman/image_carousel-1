@@ -2,18 +2,10 @@ import React from 'react';
 
 
 
-class BigImage extends React.Component {
-  constructor(props) {
-    super(props)
+const BigImage = (props) => (
 
-  }
-
-
-  render() {
-    return (
-      <img src="https://media2.giphy.com/media/3o6ozfYuxtdUTHnQQ0/giphy.gif" alt="needs-to-be-filled-in"></img>
+      <div className={"bigImageContainer"}>
+        <img className="bigImage" src={props.mainImage.url} alt={props.mainImage.url}></img>
+      </div>
     )
-  }
-}
-
 export default BigImage
