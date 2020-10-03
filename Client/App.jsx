@@ -101,7 +101,8 @@ class App extends React.Component {
             imageList={this.state.imageList.slice(0, 4)}
             extendImage={this.state.imageList.slice(4, 5)[0]}
             changeMainImage={this.changeMainImage.bind(this)}
-            clickMainImageForPopOut={this.clickMainImageForPopOut.bind(this)}/>
+            clickMainImageForPopOut={this.clickMainImageForPopOut.bind(this)}
+            mainImageId={this.state.mainImageId}/>
         </div>
         <div>
           <MainImage image={this.state.imageList.filter((image) =>

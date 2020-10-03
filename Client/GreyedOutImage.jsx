@@ -6,7 +6,7 @@ class GreyedOutImage extends React.Component {
   }
 
   imageClick() {
-    this.props.clickMainImageForPopOut()
+    this.props.clickMainImageForPopOut(this.props.mainImageId)
   }
 
   render () {

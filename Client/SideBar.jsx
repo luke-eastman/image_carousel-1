@@ -14,7 +14,8 @@ const SideBar = (props) => (
     )}
     <GreyedOutImage
       extendImage={props.extendImage}
-      clickMainImageForPopOut={props.clickMainImageForPopOut}/>
+      clickMainImageForPopOut={props.clickMainImageForPopOut}
+      mainImageId={props.mainImageId}/>
 </div>
 
 )
