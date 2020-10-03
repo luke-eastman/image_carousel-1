@@ -1,10 +1,8 @@
 import React from 'react'
 
-
 class BottomBarEntry extends React.Component {
   constructor(props) {
     super(props)
-
   }
 
   handleClick() {
@@ -22,14 +20,9 @@ class BottomBarEntry extends React.Component {
           alt={this.props.image.alt}
           onClick={this.handleClick.bind(this)}
           >
-
           </img>
-
-
       </div>
     )
-
   }
 }
-
 export default BottomBarEntry;

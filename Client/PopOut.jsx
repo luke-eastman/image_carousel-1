@@ -24,7 +24,4 @@ const PopOut = (props) => (
           </div>
         </div>
 )
-
-
-
   export default PopOut;

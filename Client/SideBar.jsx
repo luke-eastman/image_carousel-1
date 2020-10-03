@@ -17,7 +17,5 @@ const SideBar = (props) => (
       clickMainImageForPopOut={props.clickMainImageForPopOut}
       mainImageId={props.mainImageId}/>
 </div>
-
 )
-
 export default SideBar;

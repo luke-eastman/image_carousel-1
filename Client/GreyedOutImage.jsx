@@ -10,17 +10,13 @@ class GreyedOutImage extends React.Component {
   }
 
   render () {
-
     return (
-      <div >
+      <div className="image-container">
         <img
-          className="SideBarEntry"
+          className="SideBarEntry greyedImage"
           src={this.props.extendImage.url}
           onClick={this.imageClick.bind(this)}>
-
           </img>
-
-
       </div>
     )
 

@@ -19,16 +19,13 @@ class SideBarEntry extends React.Component {
           src={this.props.image.url}
           onClick={this.handleClick.bind(this)}
           >
-
           </img>
-
-
       </div>
     )
-
   }
 }
 
 export default SideBarEntry;
+
 
 
