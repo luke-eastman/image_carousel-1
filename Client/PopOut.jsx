@@ -12,7 +12,7 @@ const PopOut = (props) => (
             <Exit changeViewBack={props.changeViewBack}/>
           </div>
           <div>
-            <div className="mainCarousel">
+            <div className="bigCarousel">
               <LastPicture lastImage={props.lastImage}/>
               <BigImage mainImage={props.mainImage}/>
               <NextPicture nextImage={props.nextImage}/>

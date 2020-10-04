@@ -12,7 +12,7 @@ class LastPicture extends React.Component {
   render() {
     return (
       <div>
-        <button onClick={this.handleClick.bind(this)}> L </button>
+        <button className="lastPictureButton" onClick={this.handleClick.bind(this)}> &lt; </button>
       </div>
     )
   }

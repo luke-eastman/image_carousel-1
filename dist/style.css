@@ -24,8 +24,28 @@ h3 {
   display: block;
 }
 
+.greyedImage {
+  height: auto;
+  width: auto;
+  max-width: auto;
+  max-height: 100px;
+  display: block;
+  filter: brightness(30%);
+}
 
+.image-container {
+  position: relative;
+  text-align: center;
+  color: white;
 
+}
+
+.centeredOverImage {
+  position: absolute;
+  top: 50%;
+  left: 40%;
+  transform: translate(-50%, -50%);
+}
 figure {
   width: 600px;
   /* background-repeat: no-repeat; */
@@ -64,24 +84,24 @@ figure:hover img {
   align-items: center;
 }
 
-.mainCarousel {
-  display: block;
+.bigCarousel {
+  display: flex;
+  flex-direction: row;
+}
+
+.lastPictureButton {
+  background-color: white;
+  padding: 15px;
+  border: 2.5px solid black;
+  border-radius: 50%;
+  font-size: 25px;
 }
 
 
-.greyedImage {
-  position: relative;
-
-}
-.greyedImage::after {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  display: none;
-  color: #FFF;
-}
-.greyedImage:hover {
-  display: block;
+.nextPictureButton {
+  background-color: white;
+  padding: 15px;
+  border: 2.5px solid black;
+  border-radius: 50%;
+  font-size: 25px;
 }

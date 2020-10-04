@@ -12,7 +12,7 @@ class NextPicture extends React.Component {
   render() {
     return (
       <div>
-        <button onClick={this.handleClick.bind(this)}> N </button>
+        <button className="nextPictureButton" onClick={this.handleClick.bind(this)}> > </button>
       </div>
     )
   }

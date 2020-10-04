@@ -7,7 +7,7 @@ import SideBarEntry from '../Client/sideBarEntry.jsx';
 import { mount } from 'enzyme';
 import MainImage from '../Client/mainImage.jsx'
 const faker = require('faker');
-
+import renderer from 'react-test-renderer';
 
 
 test('truth serum', () => {
@@ -37,8 +37,9 @@ var mockImageDataCreator = function(numberOfEnries) {
 describe('App', () => {
 
   test('should render the App component correctly', () => {
-    const wrapper = shallow(<App />)
-    expect(wrapper).toMatchSnapshot();
+    const wrapper = renderer.create(<App />)
+    const tree = wrapper.toJSON();
+    expect(tree).toMatchSnapshot();
   })
   test('should render SideBar', () => {
     const wrapper = shallow(<SideBar imageList={mockSideBarImages}/>);

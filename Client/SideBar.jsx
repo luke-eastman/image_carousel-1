@@ -15,7 +15,9 @@ const SideBar = (props) => (
     <GreyedOutImage
       extendImage={props.extendImage}
       clickMainImageForPopOut={props.clickMainImageForPopOut}
-      mainImageId={props.mainImageId}/>
+      mainImageId={props.mainImageId}
+      imageList={props.imageList}
+      imageListLength={props.imageListLength}/>
 </div>
 )
 export default SideBar;
