@@ -11,7 +11,9 @@ class Exit extends React.Component {
 
   render() {
     return (
-      <button className="exitBTN" onClick={this.handleClick.bind(this)}>X</button>
+      <div>
+        <button className="exitBTN" onClick={this.handleClick.bind(this)}>X</button>
+      </div>
     )
   }
 }

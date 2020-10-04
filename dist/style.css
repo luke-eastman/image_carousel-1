@@ -1,12 +1,18 @@
 .smallCarousel {
   display: flex;
-
   max-height: 100%;
 }
 
 .mainImage {
+  max-height: 500px;
+}
+figure {
+  max-height: 500px;
+  /* background-repeat: no-repeat; */
+}
 
-  max-height: 525px;
+figure:hover img {
+  opacity: 0;
 }
 
 
@@ -14,7 +20,9 @@ h3 {
   padding: 20px;
 }
 
-
+.sideBar {
+  justify-content: center;
+}
 
 .SideBarEntry {
   height: auto;
@@ -46,31 +54,15 @@ h3 {
   left: 40%;
   transform: translate(-50%, -50%);
 }
-figure {
-  width: 600px;
-  /* background-repeat: no-repeat; */
-}
 
-figure:hover img {
-  opacity: 0;
-}
 
-/* img {
-  display: block;
-} */
-
-.bigImage {
-
-  max-height: 750px;
-
-}
 
 .bottomBar {
   display: flex;
-  border: 2.5px solid black;
-  padding: 15px;
+  padding: 5px;
   align-items: center;
   justify-content: center;
+  max-height: 25vh;
 }
 
 .BottomBarEntry {
@@ -79,29 +71,50 @@ figure:hover img {
 }
 
 .bigImageContainer {
-  display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.bigImage {
+  max-height: 88vh;
 }
 
 .bigCarousel {
   display: flex;
   flex-direction: row;
+  justify-content: space-between;
 }
 
 .lastPictureButton {
   background-color: white;
-  padding: 15px;
+  padding: 8px 12px 8px 12px;
   border: 2.5px solid black;
   border-radius: 50%;
   font-size: 25px;
+  margin-top: 375px;
+  margin-left: 100px;
+  /* margin-right: 30px; */
 }
 
 
 .nextPictureButton {
   background-color: white;
-  padding: 15px;
+  padding: 8px 12px 8px 12px;
   border: 2.5px solid black;
   border-radius: 50%;
   font-size: 25px;
+  margin-top: 210px;
+  margin-right: 120px;
+}
+
+.exitBTN {
+  background-color: black;
+  padding: 8px 10px 8px 10px;
+  border: 2.5px solid black;
+  border-radius: 50%;
+  margin-top: 125px;
+  margin-left: 25px;
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
 }
