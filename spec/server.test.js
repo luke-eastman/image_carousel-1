@@ -2,6 +2,7 @@ const supertest = require("supertest");
 const app = require("../Server/server.js");
 const Image = require('../DB/image.js')
 const mongooseConnection = require("mongodb")
+jest.setTimeout(30000);
 
 describe('Truth Serum', () => {
   it('should test that true === true', () => {
