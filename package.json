@@ -4,7 +4,7 @@
   "description": "Image Carousel",
   "main": "index.js",
   "scripts": {
-    "test": "jest --verbose",
+    "test": "jest --verbose -u",
     "start": "nodemon ./Server/index.js",
     "dbSetup": "node DB/seed.js",
     "build": "webpack --config webpack.config.js"

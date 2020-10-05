@@ -8,7 +8,11 @@ import { mount } from 'enzyme';
 import MainImage from '../Client/mainImage.jsx'
 const faker = require('faker');
 import renderer from 'react-test-renderer';
-
+import PopOut from '../Client/PopOut.jsx'
+import BigImage from '../Client/PopOutBigImage.jsx'
+import BottomBar from '../Client/BottomBar.jsx'
+import BottomBarEntry from '../Client/BottomBarEntry.jsx'
+import Exit from '../Client/Exit.jsx'
 
 test('truth serum', () => {
   expect('true').toBe('true');
@@ -32,7 +36,7 @@ var mockImageDataCreator = function(numberOfEnries) {
   var mockImages = mockImageDataCreator(7);
   var mockSideBarImages = mockImages.slice(0, 4)
   var mockOneImage = mockImages[0];
-
+  var mockExtendImage = mockImages.slice(4, 5)[0]
 
 describe('App', () => {
 
@@ -41,7 +45,7 @@ describe('App', () => {
 
     expect(wrapper).toMatchSnapshot();
   })
-  test('should render SideBar', () => {
+  test('should render 1 SideBar', () => {
     const wrapper = shallow(<SideBar imageList={mockSideBarImages}/>);
     expect(wrapper.exists()).toBe(true);
   })
@@ -54,8 +58,8 @@ describe('App', () => {
 
 
 describe('SideBar', () => {
-  test('should render 5 sidebar entry image components', () => {
-    const wrapper = mount(<SideBar imageList={mockSideBarImages}/>);
+  test('should render 4 sidebar entry image components', () => {
+    const wrapper = mount(<SideBar imageList={mockSideBarImages} extendImage={mockExtendImage}/>);
     expect(wrapper.find(SideBarEntry)).toHaveLength(4);
   })
   test('each sidebar entry should have an img tag', () => {
@@ -63,4 +67,33 @@ describe('SideBar', () => {
    expect(wrapper.find('img')).toHaveLength(1)
   })
 
+})
+
+
+describe('PopOut', () => {
+  test('should render the PopOut component correctly', () => {
+    const wrapper = shallow(<PopOut />);
+
+    expect(wrapper).toMatchSnapshot();
+  })
+  test('should render 1 big image', () => {
+    const wrapper = shallow(<PopOut />);
+    expect(wrapper.find(BigImage)).toHaveLength(1)
+  })
+  test('should render 1 bottom bar', () => {
+    const wrapper = shallow(<PopOut />);
+    expect(wrapper.find(BottomBar)).toHaveLength(1)
+  })
+  test('should render bottom bar entry for each in image list', () => {
+    const wrapper = shallow(<BottomBar imageList={mockImages}/>);
+    expect(wrapper.find(BottomBarEntry)).toHaveLength(mockImages.length)
+  })
+  test('each sidebar entry should have an img tag', () => {
+    const wrapper = mount (<BottomBarEntry image={mockOneImage}/>);
+   expect(wrapper.find('img')).toHaveLength(1)
+  })
+  test('should conatin one exit component', () => {
+    const wrapper = shallow(<PopOut />);
+    expect(wrapper.find(Exit)).toHaveLength(1);
+  })
 })

@@ -8,7 +8,7 @@ const SideBar = (props) => (
       <SideBarEntry
         image={image}
         changeMainImage={props.changeMainImage}
-        key={image.id}
+        key={image._id}
         imageList={props.imageList}
       />
     )}
