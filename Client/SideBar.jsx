@@ -3,7 +3,7 @@ import SideBarEntry from './sideBarEntry.jsx';
 import GreyedOutImage from './GreyedOutImage.jsx'
 
 const SideBar = (props) => (
-<div >
+<div className="sideBarContainer">
    {props.imageList.map((image) =>
       <SideBarEntry
         image={image}
@@ -15,7 +15,9 @@ const SideBar = (props) => (
     <GreyedOutImage
       extendImage={props.extendImage}
       clickMainImageForPopOut={props.clickMainImageForPopOut}
-      mainImageId={props.mainImageId}/>
+      mainImageId={props.mainImageId}
+      imageList={props.imageList}
+      imageListLength={props.imageListLength}/>
 </div>
 )
 export default SideBar;
