@@ -3,7 +3,7 @@ import SideBarEntry from './sideBarEntry.jsx';
 import GreyedOutImage from './GreyedOutImage.jsx'
 
 const SideBar = (props) => (
-<div className="sideBar">
+<div className="sideBarContainer">
    {props.imageList.map((image) =>
       <SideBarEntry
         image={image}

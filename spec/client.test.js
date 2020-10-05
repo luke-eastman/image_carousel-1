@@ -37,9 +37,9 @@ var mockImageDataCreator = function(numberOfEnries) {
 describe('App', () => {
 
   test('should render the App component correctly', () => {
-    const wrapper = renderer.create(<App />)
-    const tree = wrapper.toJSON();
-    expect(tree).toMatchSnapshot();
+    const wrapper = shallow(<App />);
+
+    expect(wrapper).toMatchSnapshot();
   })
   test('should render SideBar', () => {
     const wrapper = shallow(<SideBar imageList={mockSideBarImages}/>);
@@ -56,7 +56,7 @@ describe('App', () => {
 describe('SideBar', () => {
   test('should render 5 sidebar entry image components', () => {
     const wrapper = mount(<SideBar imageList={mockSideBarImages}/>);
-    expect(wrapper.find('SideBarEntry')).toHaveLength(4);
+    expect(wrapper.find(SideBarEntry)).toHaveLength(4);
   })
   test('each sidebar entry should have an img tag', () => {
     const wrapper = mount (<SideBarEntry image={mockOneImage}/>);
