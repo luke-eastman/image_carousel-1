@@ -18,6 +18,7 @@ In order to get setup run the following scripts:
 6) Run webpack again: npm run build
 
 7) Carousel should be rendered to DOM
+
 5) Testing Script: npm test
 
 Have Fun!

@@ -4,7 +4,7 @@ import SideBar from './sideBar.jsx';
 import PopOut from './PopOut.jsx'
 
 
-class App extends React.Component {
+class ImageCarousel extends React.Component {
   constructor(props) {
     super(props)
       this.state = {
@@ -124,6 +124,6 @@ class App extends React.Component {
   }
 }
 
-export default App;
+export default ImageCarousel;
 
 

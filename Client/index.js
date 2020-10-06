@@ -1,5 +1,5 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './App.jsx';
+import ImageCarousel from './App.jsx';
 
-ReactDOM.render(<App />, document.getElementById('image-carousel'));
+ReactDOM.render(<ImageCarousel />, document.getElementById('ImageCarousel'));
