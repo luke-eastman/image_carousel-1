@@ -6,7 +6,8 @@ const BottomBar = (props) => (
         {props.imageList.map((image) => <BottomBarEntry
           image={image}
           changeMainImage={props.changeMainImage}
-          imageList={props.imageList}/>
+          imageList={props.imageList}
+          key={image._id}/>
       )}</div>
 )
 

@@ -67,7 +67,7 @@ class App extends React.Component {
     }
   }
   getImagesForEndpoint() {
-    fetch('http://localhost:8080/api/products/standard-fit-hoodied-sweatshirt/baby-blue/carousel')
+    fetch('http://localhost:3001/api/products/standard-fit-hoodied-sweatshirt/baby-blue/carousel')
     .then(res => res.json())
     .then((images) => {
 

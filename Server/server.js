@@ -36,6 +36,7 @@ app.get('/api/products/:product/:color/carousel', function(req, res) {
     if (err) {
     throw err;
   } else {
+    res.setHeader('Access-Control-Allow-Origin', 'http://localhost:3000')
     res.send(result);
   }
   });
