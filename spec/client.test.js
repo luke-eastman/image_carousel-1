@@ -1,7 +1,7 @@
 import 'jsdom-global/register';
 import React from 'react';
 import { shallow } from 'enzyme';
-import App from '../Client/App.jsx';
+import ImageCarousel from '../Client/App.jsx';
 import SideBar from '../Client/SideBar.jsx';
 import SideBarEntry from '../Client/sideBarEntry.jsx';
 import { mount } from 'enzyme';
@@ -38,10 +38,10 @@ var mockImageDataCreator = function(numberOfEnries) {
   var mockOneImage = mockImages[0];
   var mockExtendImage = mockImages.slice(4, 5)[0]
 
-describe('App', () => {
+describe('ImageCarousel', () => {
 
-  test('should render the App component correctly', () => {
-    const wrapper = shallow(<App />);
+  test('should render the ImageCarousel component correctly', () => {
+    const wrapper = shallow(<ImageCarousel />);
 
     expect(wrapper).toMatchSnapshot();
   })
