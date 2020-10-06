@@ -93,14 +93,12 @@ var fakeImageDataCreator = function(numberOfEnries) {
 }
 
 var fakeData = fakeImageDataCreator(600);
+var data = realData.concat(fakeData)
 
 
-const insertImageData = function(dataArray) {
-  Image.create(dataArray)
-  .then(() => db.close())
-};
+  Image.create(data)
+  .then(() => mongoose.disconnect())
+  .catch(err => console.log(err))
 
-insertImageData(realData);
 
-insertImageData(fakeData);
 

@@ -4,12 +4,12 @@ import SideBar from './sideBar.jsx';
 import PopOut from './PopOut.jsx'
 
 
-class App extends React.Component {
+class ImageCarousel extends React.Component {
   constructor(props) {
     super(props)
       this.state = {
         imageList: [],
-        mainImageId: "5f743973c775129696d110f5",
+        mainImageId: "5f7cc543967ac97cb714b8ca",
         mainImageIndex: 0,
         mainImageClicked: false,
         mainImageBeforePopOut: ''
@@ -67,10 +67,10 @@ class App extends React.Component {
     }
   }
   getImagesForEndpoint() {
-    fetch('http://localhost:8080/api/products/standard-fit-hoodied-sweatshirt/baby-blue/carousel')
+    fetch('http://localhost:3001/api/products/standard-fit-hoodied-sweatshirt/baby-blue/carousel')
     .then(res => res.json())
     .then((images) => {
-
+      console.log(images[0])
       this.setState({
         imageList: images,
       })
@@ -124,6 +124,6 @@ class App extends React.Component {
   }
 }
 
-export default App;
+export default ImageCarousel;
 
 
