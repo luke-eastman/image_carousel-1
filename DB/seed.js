@@ -7,14 +7,14 @@ const faker = require('faker');
 
 var realData = [
   {
-    product: 'standard-fit-hoodied-sweatshirt',
+    product: 1,
     imageName: 'stock-studio-image',
     color: 'baby-blue',
     url: 'https://target-image-carousel.s3-us-west-1.amazonaws.com/Screen+Shot+2020-09-24+at+5.20.35+PM.png',
     alt: 'baby-blue-sweatshirt'
   },
   {
-    product: "standard-fit-hoodied-sweatshirt",
+    product: 1,
     imageName: "girl-modelingSS1",
     color: "all",
     url: "https://target-image-carousel.s3-us-west-1.amazonaws.com/Screen+Shot+2020-09-24+at+5.20.58+PM.png",
@@ -22,7 +22,7 @@ var realData = [
     __v: 0
 },
 {
-    product: "standard-fit-hoodied-sweatshirt",
+    product: 1,
     imageName: "girl-modelingSS2",
     color: "all",
     url: "https://target-image-carousel.s3-us-west-1.amazonaws.com/Screen+Shot+2020-09-24+at+5.21.10+PM.png",
@@ -30,7 +30,7 @@ var realData = [
     __v: 0
 },
 {
-    product: "standard-fit-hoodied-sweatshirt",
+    product: 1,
     imageName: "girl-modelingSS3",
     color: "all",
     url: "https://target-image-carousel.s3-us-west-1.amazonaws.com/Screen+Shot+2020-09-24+at+5.21.25+PM.png",
@@ -38,7 +38,7 @@ var realData = [
     __v: 0
 },
 {
-    product: "standard-fit-hoodied-sweatshirt",
+    product: 1,
     imageName: "girl-modelingSS4",
     color: "all",
     url: "https://target-image-carousel.s3-us-west-1.amazonaws.com/Screen+Shot+2020-09-24+at+5.21.39+PM.png",
@@ -46,7 +46,7 @@ var realData = [
     __v: 0
 },
 {
-    product: "standard-fit-hoodied-sweatshirt",
+    product: 1,
     imageName: "girl-modelingSS5",
     color: "all",
     url: "https://target-image-carousel.s3-us-west-1.amazonaws.com/Screen+Shot+2020-09-24+at+5.21.52+PM.png",
@@ -54,7 +54,7 @@ var realData = [
     __v: 0
 },
 {
-    product: "standard-fit-hoodied-sweatshirt",
+    product: 1,
     imageName: "girl-modelingSS6",
     color: "all",
     url: "https://target-image-carousel.s3-us-west-1.amazonaws.com/Screen+Shot+2020-09-24+at+5.22.04+PM.png",
@@ -80,9 +80,15 @@ var imageRandomizer = function (array) {
 var fakeImageDataCreator = function(numberOfEnries) {
 
   var dataEntries = [];
-  for (var i = 7; i < numberOfEnries + 7; i++) {
+var currentID = 2
+var referenceIndex = 0
+  for (var i = 0; i < numberOfEnries - 7; i++) {
+         if (i === referenceIndex + 7) {
+          referenceIndex += 7
+          currentID++
+        }
     dataEntries.push({
-       product: faker.commerce.productName().split(' ').join('-'),
+       product: currentID,
        imageName: faker.commerce.productDescription(),
        color: faker.commerce.color().split(' ').join('-'),
        url: 'https://target-image-carousel.s3-us-west-1.amazonaws.com/' + imageRandomizer(randomImageUrls),
@@ -92,9 +98,10 @@ var fakeImageDataCreator = function(numberOfEnries) {
   return dataEntries;
 }
 
-var fakeData = fakeImageDataCreator(600);
+var fakeData = fakeImageDataCreator(700);
 var data = realData.concat(fakeData)
 
+console.log(fakeData)
 
   Image.create(data)
   .then(() => mongoose.disconnect())

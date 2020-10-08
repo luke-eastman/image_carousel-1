@@ -9,10 +9,9 @@ class ImageCarousel extends React.Component {
     super(props)
       this.state = {
         imageList: [],
-        mainImageId: "5f7cc543967ac97cb714b8ca",
-        mainImageIndex: 0,
+        mainImageId: "",
         mainImageClicked: false,
-        mainImageBeforePopOut: ''
+        mainImageBeforePopOut: '',
       }
   }
 
@@ -66,13 +65,17 @@ class ImageCarousel extends React.Component {
       })
     }
   }
+
   getImagesForEndpoint() {
-    fetch('http://localhost:3001/api/products/standard-fit-hoodied-sweatshirt/baby-blue/carousel')
+    var productID = window.location.pathname.slice(1) === '' ? 1 : window.location.pathname.slice(1);
+
+    fetch(`http://localhost:3001/products/${productID}`)
     .then(res => res.json())
     .then((images) => {
-      // console.log(images[0]._id)
+
       this.setState({
         imageList: images,
+        mainImageId: images[0]._id
       })
 
     })
