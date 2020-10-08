@@ -1,8 +1,8 @@
 import React from 'react';
 import MainImage from './mainImage.jsx'
 import SideBar from './sideBar.jsx';
-import PopOut from './PopOut.jsx'
-
+import PopOut from './PopOut.jsx';
+import styles from './App.module.css';
 
 class ImageCarousel extends React.Component {
   constructor(props) {
@@ -70,7 +70,7 @@ class ImageCarousel extends React.Component {
     fetch('http://localhost:3001/api/products/standard-fit-hoodied-sweatshirt/baby-blue/carousel')
     .then(res => res.json())
     .then((images) => {
-      console.log(images[0])
+      // console.log(images[0]._id)
       this.setState({
         imageList: images,
       })
@@ -95,22 +95,23 @@ class ImageCarousel extends React.Component {
                 changeMainImage={this.changeMainImage.bind(this)}/>
     } else if (this.state.mainImageClicked === false) {
          //if the image list exists render the carousel
-         return this.state.imageList.length > 0 ? <div className="smallCarousel">
-        <div className="sideBar">
-          <SideBar
-            imageList={this.state.imageList.slice(0, 4)}
-            extendImage={this.state.imageList.slice(4, 5)[0]}
-            changeMainImage={this.changeMainImage.bind(this)}
-            clickMainImageForPopOut={this.clickMainImageForPopOut.bind(this)}
-            mainImageId={this.state.mainImageId}
-            imageListLength={this.state.imageList.length}/>
-        </div>
-        <div>
-          <MainImage image={this.state.imageList.filter((image) =>
+      return this.state.imageList.length > 0 ?
+        <div className={styles.smallCarousel}>
+          <div className="sideBar">
+            <SideBar
+              imageList={this.state.imageList.slice(0, 4)}
+              extendImage={this.state.imageList.slice(4, 5)[0]}
+              changeMainImage={this.changeMainImage.bind(this)}
+              clickMainImageForPopOut={this.clickMainImageForPopOut.bind(this)}
+              mainImageId={this.state.mainImageId}
+              imageListLength={this.state.imageList.length}/>
+          </div>
+          <div>
+            <MainImage image={this.state.imageList.filter((image) =>
 
-            { return image._id === this.state.mainImageId})[0]} clickMainImageForPopOut={this.clickMainImageForPopOut.bind(this)}/>
-        </div>
-      </div> : null
+              { return image._id === this.state.mainImageId})[0]} clickMainImageForPopOut={this.clickMainImageForPopOut.bind(this)}/>
+          </div>
+        </div> : null
     }
   }
 

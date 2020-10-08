@@ -1,4 +1,5 @@
 import React from 'react';
+import styles from './Button.module.css';
 
 class LastPicture extends React.Component {
   constructor(props) {
@@ -12,7 +13,7 @@ class LastPicture extends React.Component {
   render() {
     return (
       <div>
-        <button className="lastPictureButton" onClick={this.handleClick.bind(this)}> &lt; </button>
+        <button className={styles.lastPictureButton} onClick={this.handleClick.bind(this)}> &lt; </button>
       </div>
     )
   }

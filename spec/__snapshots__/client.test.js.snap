@@ -1,12 +1,12 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`App should render the App component correctly 1`] = `<div />`;
+exports[`ImageCarousel should render the ImageCarousel component correctly 1`] = `<div />`;
 
 exports[`PopOut should render the PopOut component correctly 1`] = `
-<div>
-  <div
-    className="bigCarousel"
-  >
+<div
+  className="popOut"
+>
+  <div>
     <LastPicture />
     <BigImage />
     <div>

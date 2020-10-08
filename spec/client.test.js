@@ -1,18 +1,18 @@
 import 'jsdom-global/register';
 import React from 'react';
 import { shallow } from 'enzyme';
-import App from '../Client/App.jsx';
+import ImageCarousel from '../Client/App.jsx';
 import SideBar from '../Client/SideBar.jsx';
 import SideBarEntry from '../Client/sideBarEntry.jsx';
 import { mount } from 'enzyme';
-import MainImage from '../Client/mainImage.jsx'
+import MainImage from '../Client/mainImage.jsx';
 const faker = require('faker');
 import renderer from 'react-test-renderer';
-import PopOut from '../Client/PopOut.jsx'
-import BigImage from '../Client/PopOutBigImage.jsx'
-import BottomBar from '../Client/BottomBar.jsx'
-import BottomBarEntry from '../Client/BottomBarEntry.jsx'
-import Exit from '../Client/Exit.jsx'
+import PopOut from '../Client/PopOut.jsx';
+import BigImage from '../Client/PopOutBigImage.jsx';
+import BottomBar from '../Client/BottomBar.jsx';
+import BottomBarEntry from '../Client/BottomBarEntry.jsx';
+import Exit from '../Client/Exit.jsx';
 
 test('truth serum', () => {
   expect('true').toBe('true');
@@ -38,10 +38,10 @@ var mockImageDataCreator = function(numberOfEnries) {
   var mockOneImage = mockImages[0];
   var mockExtendImage = mockImages.slice(4, 5)[0]
 
-describe('App', () => {
+describe('ImageCarousel', () => {
 
-  test('should render the App component correctly', () => {
-    const wrapper = shallow(<App />);
+  test('should render the ImageCarousel component correctly', () => {
+    const wrapper = shallow(<ImageCarousel />);
 
     expect(wrapper).toMatchSnapshot();
   })
