@@ -1,4 +1,5 @@
 import React from 'react';
+import styles from './Button.module.css';
 
 class Exit extends React.Component {
   constructor(props) {
@@ -12,7 +13,7 @@ class Exit extends React.Component {
   render() {
     return (
       <div>
-        <button className="exitBTN" onClick={this.handleClick.bind(this)}>X</button>
+        <button className={styles.exitBTN} onClick={this.handleClick.bind(this)}>X</button>
       </div>
     )
   }

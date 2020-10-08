@@ -5,14 +5,14 @@ import ImageCarousel from '../Client/App.jsx';
 import SideBar from '../Client/SideBar.jsx';
 import SideBarEntry from '../Client/sideBarEntry.jsx';
 import { mount } from 'enzyme';
-import MainImage from '../Client/mainImage.jsx'
+import MainImage from '../Client/mainImage.jsx';
 const faker = require('faker');
 import renderer from 'react-test-renderer';
-import PopOut from '../Client/PopOut.jsx'
-import BigImage from '../Client/PopOutBigImage.jsx'
-import BottomBar from '../Client/BottomBar.jsx'
-import BottomBarEntry from '../Client/BottomBarEntry.jsx'
-import Exit from '../Client/Exit.jsx'
+import PopOut from '../Client/PopOut.jsx';
+import BigImage from '../Client/PopOutBigImage.jsx';
+import BottomBar from '../Client/BottomBar.jsx';
+import BottomBarEntry from '../Client/BottomBarEntry.jsx';
+import Exit from '../Client/Exit.jsx';
 
 test('truth serum', () => {
   expect('true').toBe('true');

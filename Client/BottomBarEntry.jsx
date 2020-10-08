@@ -1,4 +1,5 @@
 import React from 'react'
+import styles from './BottomBar.module.css';
 
 class BottomBarEntry extends React.Component {
   constructor(props) {
@@ -15,7 +16,7 @@ class BottomBarEntry extends React.Component {
     return (
       <div >
         <img
-          className="BottomBarEntry"
+          className={styles.BottomBarEntry}
           src={this.props.image.url}
           alt={this.props.image.alt}
           onClick={this.handleClick.bind(this)}

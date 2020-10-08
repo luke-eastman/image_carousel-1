@@ -1,5 +1,5 @@
 import React from 'react';
-
+import styles from './MainImage.module.css'
 
 
 class MainImage extends React.Component {
@@ -33,7 +33,7 @@ class MainImage extends React.Component {
           onMouseMove={this.handleMouseMove.bind(this)}
           style={this.state}>
           <img
-            className="mainImage"
+            className={styles.mainImage}
             src={this.props.image.url}
             alt={this.props.image.alt}>
           </img>

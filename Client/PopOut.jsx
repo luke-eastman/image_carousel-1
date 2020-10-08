@@ -4,10 +4,12 @@ import Exit from './Exit.jsx'
 import BottomBar from './BottomBar.jsx'
 import NextPicture from './NextPictureButton.jsx'
 import LastPicture from './LastPictureButton.jsx'
+import styles from './PopOut.module.css';
+
 
 const PopOut = (props) => (
-          <div>
-            <div className="bigCarousel">
+          <div className="popOut">
+            <div className={styles.bigCarousel}>
               <LastPicture lastImage={props.lastImage}/>
               <BigImage mainImage={props.mainImage}/>
               <div>
