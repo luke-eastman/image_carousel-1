@@ -68,11 +68,11 @@ class ImageCarousel extends React.Component {
 
   getImagesForEndpoint() {
     var productID = window.location.pathname.slice(1) === '' ? 1 : window.location.pathname.slice(1);
-    console.log(productID);
+
     fetch(`http://localhost:3001/products/${productID}`)
     .then(res => res.json())
     .then((images) => {
-      console.log(images)
+
       this.setState({
         imageList: images,
         mainImageId: images[0]._id
