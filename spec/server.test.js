@@ -27,6 +27,7 @@ describe("GET photos", () => {
 
 test("Get /api/products", async () => {
   const image = await Image.create({
+      _id: Math.floor(Math.random() * 100000) + 1000;
       product: 'lacroiz-6-pack',
       imageName: 'stock-studio-image',
       color: 'peach-pear',
