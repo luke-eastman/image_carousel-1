@@ -12,6 +12,7 @@ class ImageCarousel extends React.Component {
         mainImageId: "",
         mainImageClicked: false,
         mainImageBeforePopOut: '',
+        mainImageIndex: 0
       }
   }
 
