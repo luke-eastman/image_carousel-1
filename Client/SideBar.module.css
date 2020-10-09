@@ -8,7 +8,6 @@
 
 .SideBarEntry {
   height: auto;
-  width: auto;
   max-width: auto;
   max-height: 80px;
   display: block;
@@ -17,7 +16,7 @@
 .greyedImage {
   height: auto;
   width: auto;
-  max-width: auto;
+  max-width: 80px;
   max-height: 80px;
   display: block;
   filter: brightness(30%);
