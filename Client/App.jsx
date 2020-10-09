@@ -1,6 +1,6 @@
 import React from 'react';
 import MainImage from './mainImage.jsx'
-import SideBar from './sideBar.jsx';
+import SideBar from './SideBar.jsx';
 import PopOut from './PopOut.jsx';
 import styles from './App.module.css';
 
@@ -67,8 +67,14 @@ class ImageCarousel extends React.Component {
   }
 
   getImagesForEndpoint() {
-    var productID = window.location.pathname.slice(1) === '' ? 1 : window.location.pathname.slice(1);
-
+    var productID;
+    if(window.location.pathname.slice(1) === '') {
+      productID = 1;
+    } else if (window.location.pathname.slice(1) >= 101) {
+      productID = 1;
+    } else {
+      productID = window.location.pathname.slice(1);
+    }
     fetch(`http://localhost:3001/products/${productID}`)
     .then(res => res.json())
     .then((images) => {

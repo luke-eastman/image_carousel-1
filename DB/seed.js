@@ -17,7 +17,7 @@ var realData = [
     product: 1,
     imageName: "girl-modelingSS1",
     color: "all",
-    url: "https://target-image-carousel.s3-us-west-1.amazonaws.com/Screen+Shot+2020-09-24+at+5.20.58+PM.png",
+    url: "https://target-image-carousel.s3-us-west-1.amazonaws.com/Screen+Shot+2020-10-08+at+4.04.32+PM.png",
     alt: "baby-blue-sweatshirt",
     __v: 0
 },
@@ -33,7 +33,7 @@ var realData = [
     product: 1,
     imageName: "girl-modelingSS3",
     color: "all",
-    url: "https://target-image-carousel.s3-us-west-1.amazonaws.com/Screen+Shot+2020-09-24+at+5.21.25+PM.png",
+    url: "https://target-image-carousel.s3-us-west-1.amazonaws.com/Screen+Shot+2020-10-08+at+4.06.16+PM.png",
     alt: "baby-blue-sweatshirt",
     __v: 0
 },
@@ -41,7 +41,7 @@ var realData = [
     product: 1,
     imageName: "girl-modelingSS4",
     color: "all",
-    url: "https://target-image-carousel.s3-us-west-1.amazonaws.com/Screen+Shot+2020-09-24+at+5.21.39+PM.png",
+    url: "https://target-image-carousel.s3-us-west-1.amazonaws.com/Screen+Shot+2020-10-08+at+4.08.14+PM.png",
     alt: "baby-blue-sweatshirt",
     __v: 0
 },
@@ -49,7 +49,7 @@ var realData = [
     product: 1,
     imageName: "girl-modelingSS5",
     color: "all",
-    url: "https://target-image-carousel.s3-us-west-1.amazonaws.com/Screen+Shot+2020-09-24+at+5.21.52+PM.png",
+    url: "https://target-image-carousel.s3-us-west-1.amazonaws.com/Screen+Shot+2020-10-08+at+4.09.38+PM.png",
     alt: "baby-blue-sweatshirt",
     __v: 0
 },
@@ -57,7 +57,7 @@ var realData = [
     product: 1,
     imageName: "girl-modelingSS6",
     color: "all",
-    url: "https://target-image-carousel.s3-us-west-1.amazonaws.com/Screen+Shot+2020-09-24+at+5.22.04+PM.png",
+    url: "https://target-image-carousel.s3-us-west-1.amazonaws.com/Screen+Shot+2020-10-08+at+4.09.10+PM.png",
     alt: "baby-blue-sweatshirt",
     __v: 0
 }
@@ -101,7 +101,7 @@ var referenceIndex = 0
 var fakeData = fakeImageDataCreator(700);
 var data = realData.concat(fakeData)
 
-console.log(fakeData)
+
 
   Image.create(data)
   .then(() => mongoose.disconnect())
