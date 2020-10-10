@@ -12,6 +12,7 @@ class ImageCarousel extends React.Component {
         mainImageId: "",
         mainImageClicked: false,
         mainImageBeforePopOut: '',
+        mainImageIndex: 0
       }
   }
 
@@ -75,15 +76,13 @@ class ImageCarousel extends React.Component {
     } else {
       productID = window.location.pathname.slice(1);
     }
-    fetch(`http://localhost:3001/products/${productID}`)
+    fetch(`/products/${productID}`)
     .then(res => res.json())
     .then((images) => {
-
       this.setState({
         imageList: images,
         mainImageId: images[0]._id
       })
-
     })
     .catch(err => console.log(err))
 
