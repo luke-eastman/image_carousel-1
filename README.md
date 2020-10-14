@@ -52,15 +52,15 @@ Have Fun!
 
   returns: array of all images associated with the product in JSON format
 
-  product:   product number
+    product:   product number
 
-  imageName: title of the image
+    imageName: title of the image
 
-  color:     product color variation
+    color:     product color variation
 
-  url:       url of the actual image
+    url:       url of the actual image
 
-  alt:       alternate
+    alt:       alternate
 
 ## Update:
   method: put
@@ -69,15 +69,15 @@ Have Fun!
 
   request body must have an image object with at least product and url keys. The item matching those two keys will be updated with the values at the remaining keys
 
-  product:   product number (required)
+    product:   product number (required)
 
-  imageName: title of the image
+    imageName: title of the image
 
-  color:     product color variation
+    color:     product color variation
 
-  url:       url of the actual image (required)
+    url:       url of the actual image (required)
 
-  alt:       alternate
+    alt:       alternate
 
 ## Delete:
   method: delete
@@ -86,6 +86,6 @@ Have Fun!
 
   request body must have an image object with at least product and url keys. The item matching those two keys will be deleted
 
-  product: product number (required)
+    product: product number (required)
 
-  url:     url of the actual image (required)
+    url:     url of the actual image (required)
