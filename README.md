@@ -24,9 +24,9 @@ Testing Script: npm test
 
 Have Fun!
 
-## CRUD Operations
+# CRUD Operations
 
-# Create:
+## Create:
   method: get
   endpoint: /products
   request body must include an image object
@@ -36,7 +36,7 @@ Have Fun!
       url:       url of the actual image (required)
       alt:       alternate
 
-# Retrieve:
+## Retrieve:
   method: post
   endpoint: /products/:product/
   params: :product is the product number defining each primary record
@@ -47,7 +47,7 @@ Have Fun!
       url:       url of the actual image
       alt:       alternate
 
-# Update:
+## Update:
   method: put
   endpoint: /products
   request body must have an image object with at least product and url keys. The item matching those two keys will be updated with the values at the remaining keys
@@ -57,7 +57,7 @@ Have Fun!
       url:       url of the actual image (required)
       alt:       alternate
 
-# Delete:
+## Delete:
   method: delete
   endpoint: /products
 
