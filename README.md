@@ -27,30 +27,35 @@ Have Fun!
 # CRUD Operations
 
 ## Create:
-  method: get
-
-  endpoint: /products
 
   request body must include an image object
 
-      product:   product number (required)
+    method: get
 
-      imageName: title of the image
+    endpoint: /image
 
-      color:     product color variation
+    ------------------------------------
 
-      url:       url of the actual image (required)
+    product:   product number (required)
 
-      alt:       alternate
+    imageName: title of the image
+
+    color:     product color variation
+
+    url:       url of the actual image (required)
+
+    alt:       alternate
 
 ## Retrieve:
-  method: post
+    method: post
 
-  endpoint: /products/:product/
+    endpoint: /products/:product/
 
-  params: :product is the product number defining each primary record
+    params: :product is the product number defining each primary record
 
-  returns: array of all images associated with the product in JSON format
+    returns: array of all images associated with the product in JSON format
+
+    ------------------------------------
 
     product:   product number
 
@@ -60,14 +65,19 @@ Have Fun!
 
     url:       url of the actual image
 
+
+
     alt:       alternate
 
 ## Update:
-  method: put
-
-  endpoint: /products
 
   request body must have an image object with at least product and url keys. The item matching those two keys will be updated with the values at the remaining keys
+
+    method: put
+
+    endpoint: /image
+
+    ------------------------------------
 
     product:   product number (required)
 
@@ -80,12 +90,29 @@ Have Fun!
     alt:       alternate
 
 ## Delete:
-  method: delete
 
-  endpoint: /products
+### Delete single image:
 
   request body must have an image object with at least product and url keys. The item matching those two keys will be deleted
+  method: delete
+
+    endpoint: /image
+
+    ------------------------------------
 
     product: product number (required)
 
     url:     url of the actual image (required)
+
+### Delete all images related to a product:
+
+  request body must have an image object with at least product and url keys. The item matching those two keys will be deleted
+
+    method: delete
+
+    endpoint: /product
+
+    ------------------------------------
+
+    product: product number (required)
+

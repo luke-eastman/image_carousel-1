@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 const db = require('./index.js')
 const Image = require('./image.js');
 
-var createImage = (image, callback) => {
+const createImage = (image, callback) => {
   Image.create(image, function (err, image) {
     if (err) {
       console.error(err);
@@ -13,7 +13,7 @@ var createImage = (image, callback) => {
   });
 }
 
-var getImages = (product, callback) => {
+const getImages = (product, callback) => {
   Image.find({ product: product }, function(err, result) {
     if (err) {
       console.error(err);
@@ -24,7 +24,7 @@ var getImages = (product, callback) => {
   });
 }
 
-var updateImage = (image, callback) => {
+const updateImage = (image, callback) => {
   Image.find({ product: image.product,  url: image.url}, function(err, result) {
     if (err) {
       callback(err, null);
@@ -50,8 +50,18 @@ var updateImage = (image, callback) => {
   });
 }
 
-var deleteImage = (image, callback) => {
+const deleteImage = (image, callback) => {
   Image.deleteOne({ product: image.product, url: image.url}, (err, result) => {
+    if (err) {
+      callback(err, null);
+    } else {
+      callback(null, err);
+    }
+  });
+}
+
+const deleteProduct = (product, callback) => {
+  Image.deleteMany({ product: product}, (err, result) => {
     if (err) {
       callback(err, null);
     } else {
@@ -64,3 +74,4 @@ module.exports.createImage = createImage;
 module.exports.getImages = getImages;
 module.exports.updateImage = updateImage;
 module.exports.deleteImage = deleteImage;
+module.exports.deleteProduct = deleteProduct;
