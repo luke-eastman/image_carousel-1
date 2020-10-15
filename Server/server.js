@@ -25,7 +25,7 @@ app.get('/products/:product/', function(req, res) {
   });
 });
 
-app.post('/products', (req, res) => {
+app.post('/image', (req, res) => {
   db.createImage(req.body.image, (err, result) => {
     if (err) {
       res.send(err);
@@ -35,7 +35,7 @@ app.post('/products', (req, res) => {
   });
 });
 
-app.put('/products', (req, res) => {
+app.put('/image', (req, res) => {
   let image = req.body;
   db.updateImage(image, (err, result) => {
     if (err) {
@@ -46,7 +46,7 @@ app.put('/products', (req, res) => {
   })
 });
 
-app.delete('/products', (req, res) => {
+app.delete('/image', (req, res) => {
   let product = req.body.image.product;
   let url = req.body.image.url;
   db.deleteImage({
@@ -58,7 +58,19 @@ app.delete('/products', (req, res) => {
       } else {
         res.send(result);
       }
-    })
+    }
+  );
+})
+
+app.delete('/products', (req, res) => {
+  let product = req.body.product;
+  db.deleteProduct(product, (err, result) => {
+    if (err) {
+      res.send(err);
+    } else {
+      res.send(result);
+    }
+  });
 })
 
 module.exports = app;
