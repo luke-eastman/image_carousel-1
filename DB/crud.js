@@ -55,7 +55,7 @@ const deleteImage = (image, callback) => {
     if (err) {
       callback(err, null);
     } else {
-      callback(null, err);
+      callback(null, result);
     }
   });
 }
@@ -65,7 +65,7 @@ const deleteProduct = (product, callback) => {
     if (err) {
       callback(err, null);
     } else {
-      callback(null, err);
+      callback(null, result);
     }
   });
 }
