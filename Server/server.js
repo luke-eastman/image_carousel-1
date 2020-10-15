@@ -17,7 +17,8 @@ app.get('/products/:product/', function(req, res) {
   var product = req.params.product;
   db.getImages(product, (err, result) => {
     if (err) {
-      res.send(err);
+      console.error(err);
+      res.status(500).send();
     } else {
       res.setHeader('Access-Control-Allow-Origin', '*');
       res.send(result);
@@ -28,7 +29,8 @@ app.get('/products/:product/', function(req, res) {
 app.post('/image', (req, res) => {
   db.createImage(req.body.image, (err, result) => {
     if (err) {
-      res.send(err);
+      console.error(err);
+      res.status(500).send();
     } else {
       res.send(result);
     }
@@ -39,7 +41,7 @@ app.put('/image', (req, res) => {
   let image = req.body;
   db.updateImage(image, (err, result) => {
     if (err) {
-      res.send(err);
+      res.status(500).send();
     } else {
       res.send(result);
     }
@@ -54,7 +56,8 @@ app.delete('/image', (req, res) => {
     url: url},
     (err, result) => {
       if (err) {
-        res.send(err);
+        console.error(err);
+        res.status(500).send();
       } else {
         res.send(result);
       }
@@ -66,7 +69,8 @@ app.delete('/products', (req, res) => {
   let product = req.body.product;
   db.deleteProduct(product, (err, result) => {
     if (err) {
-      res.send(err);
+      console.error(err);
+      res.status(500).send();
     } else {
       res.send(result);
     }
