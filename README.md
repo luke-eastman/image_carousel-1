@@ -27,78 +27,90 @@ Have Fun!
 # CRUD Operations
 
 ## Create:
-  method: get
-
-  endpoint: /image
 
   request body must include an image object
 
-      product:   product number (required)
+    method: get
 
-      imageName: title of the image
+    endpoint: /image
 
-      color:     product color variation
+    ------------------------------------
 
-      url:       url of the actual image (required)
+    product:   product number (required)
 
-      alt:       alternate
+    imageName: title of the image
+
+    color:     product color variation
+
+    url:       url of the actual image (required)
+
+    alt:       alternate
 
 ## Retrieve:
-  method: post
+    method: post
 
-  endpoint: /products/:product/
+    endpoint: /products/:product/
 
-  params: :product is the product number defining each primary record
+    params: :product is the product number defining each primary record
 
-  returns: array of all images associated with the product in JSON format
+    returns: array of all images associated with the product in JSON format
 
-  product:   product number
+    ------------------------------------
 
-  imageName: title of the image
+    product:   product number
 
-  color:     product color variation
+    imageName: title of the image
 
-  url:       url of the actual image
+    color:     product color variation
 
-  alt:       alternate
+    url:       url of the actual image
+
+    alt:       alternate
 
 ## Update:
-  method: put
-
-  endpoint: /image
 
   request body must have an image object with at least product and url keys. The item matching those two keys will be updated with the values at the remaining keys
 
-  product:   product number (required)
+    method: put
 
-  imageName: title of the image
+    endpoint: /image
 
-  color:     product color variation
+    ------------------------------------
 
-  url:       url of the actual image (required)
+    product:   product number (required)
 
-  alt:       alternate
+    imageName: title of the image
+
+    color:     product color variation
+
+    url:       url of the actual image (required)
+
+    alt:       alternate
 
 ## Delete:
 
 ### Delete single image:
-  method: delete
-
-  endpoint: /image
 
   request body must have an image object with at least product and url keys. The item matching those two keys will be deleted
+  method: delete
 
-  product: product number (required)
+    endpoint: /image
 
-  url:     url of the actual image (required)
+    ------------------------------------
+
+    product: product number (required)
+
+    url:     url of the actual image (required)
 
 ### Delete all images related to a product:
 
-  method: delete
-
-  endpoint: /product
-
   request body must have an image object with at least product and url keys. The item matching those two keys will be deleted
 
-  product: product number (required)
+    method: delete
+
+    endpoint: /product
+
+    ------------------------------------
+
+    product: product number (required)
 
