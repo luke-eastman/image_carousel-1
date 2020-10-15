@@ -29,7 +29,7 @@ Have Fun!
 ## Create:
   method: get
 
-  endpoint: /products
+  endpoint: /image
 
   request body must include an image object
 
@@ -65,7 +65,7 @@ Have Fun!
 ## Update:
   method: put
 
-  endpoint: /products
+  endpoint: /image
 
   request body must have an image object with at least product and url keys. The item matching those two keys will be updated with the values at the remaining keys
 
@@ -80,12 +80,25 @@ Have Fun!
   alt:       alternate
 
 ## Delete:
+
+### Delete single image:
   method: delete
 
-  endpoint: /products
+  endpoint: /image
 
   request body must have an image object with at least product and url keys. The item matching those two keys will be deleted
 
   product: product number (required)
 
   url:     url of the actual image (required)
+
+### Delete all images related to a product:
+
+  method: delete
+
+  endpoint: /product
+
+  request body must have an image object with at least product and url keys. The item matching those two keys will be deleted
+
+  product: product number (required)
+
