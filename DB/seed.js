@@ -1,11 +1,16 @@
 //const db = require('./index.js')
-
+const mongoose = require('mongoose');
+const Image = require('./image.js');
 const dataGenerator = require('./dataGenerator.js');
 
+var fakeData = dataGenerator(100);
+
+Image.create(fakeData)
+  .then(() => mongoose.disconnect())
+  .catch(err => console.log(err))
 
 
-
-var realData = [
+  var realData = [
   {
     product: 1,
     imageName: 'stock-studio-image',
