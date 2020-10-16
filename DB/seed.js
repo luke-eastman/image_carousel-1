@@ -1,13 +1,38 @@
-//const db = require('./index.js')
-const mongoose = require('mongoose');
-const Image = require('./image.js');
 const dataGenerator = require('./dataGenerator.js');
+//const db = require('./index.js')
+const db = require('./postgresCRUD.js');
 
-var fakeData = dataGenerator(100);
 
-Image.create(fakeData)
-  .then(() => mongoose.disconnect())
-  .catch(err => console.log(err))
+const productEntries = 1000;
+
+var fakeData = dataGenerator(productEntries);
+
+(async () => {
+  try {
+    await db.Product.sync({force: true})
+    await db.Image.sync({force: true});
+
+    for (var i = 0; i < productEntries; i++) {
+      await db.createProduct(i);
+    }
+
+    for (var i = 0; i < fakeData.length; i++) {
+      await db.createImage(fakeData[i]);
+    }
+
+  } catch (err) {
+    console.error(err);
+  }
+})();
+  // const mongoose = require('mongoose');
+// const Image = require('./image.js');
+// const dataGenerator = require('./dataGenerator.js');
+
+
+
+// Image.create(fakeData)
+//   .then(() => mongoose.disconnect())
+//   .catch(err => console.log(err))
 
 
   var realData = [
