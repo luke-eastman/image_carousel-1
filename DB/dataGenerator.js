@@ -1,11 +1,11 @@
 const faker = require('faker');
 
-const dataGenerator = (numberOfPrimaryRecords) => {
+const dataGenerator = (productNumberStart, productNumberEnd) => {
   let images = [];
 
   let urls = imageUrlGenerator();
 
-  for (let i = 0; i < numberOfPrimaryRecords; i++) {
+  for (let i = productNumberStart; i <= productNumberEnd; i++) {
     let imagesForRecord = Math.floor(Math.random() * 8);
     for (let j = 0; j < imagesForRecord; j++) {
       let image = {
@@ -39,3 +39,7 @@ const randomUrlIndex = () => {
 let urls = imageUrlGenerator();
 
 module.exports = dataGenerator;
+
+
+var sample = dataGenerator(10000000);
+console.log(sample[1000000]);
