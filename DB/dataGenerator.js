@@ -9,7 +9,7 @@ const dataGenerator = (productNumberStart, productNumberEnd) => {
     let imagesForRecord = Math.floor(Math.random() * 8);
     for (let j = 0; j < imagesForRecord; j++) {
       let image = {
-        product: i,
+        product_id: i,
         imageName: faker.commerce.productDescription(),
         color: faker.commerce.color().split(' ').join('-'),
         url: urls[randomUrlIndex()],
@@ -39,7 +39,3 @@ const randomUrlIndex = () => {
 let urls = imageUrlGenerator();
 
 module.exports = dataGenerator;
-
-
-var sample = dataGenerator(10000000);
-console.log(sample[1000000]);
