@@ -47,9 +47,7 @@ const Image = sequelize.define('Image', {
   }
 });
 
-Product.hasMany(Image, {
-  foreignKey: 'productNumber'
-});
+Product.hasMany(Image);
 Image.belongsTo(Product);
 
 
@@ -67,7 +65,7 @@ const createProduct = async (productNumber, productName) => {
 const createImage = async (image) => {
   try {
     await Image.create({
-      productNumber: image.product,
+      ProductId: image.product,
       imageName: image.imageName,
       color: image.color,
       url: image.url,
