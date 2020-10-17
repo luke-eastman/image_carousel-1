@@ -1,15 +1,15 @@
 const faker = require('faker');
 
-const dataGenerator = (numberOfPrimaryRecords) => {
+const dataGenerator = (productNumberStart, productNumberEnd) => {
   let images = [];
 
   let urls = imageUrlGenerator();
 
-  for (let i = 0; i < numberOfPrimaryRecords; i++) {
+  for (let i = productNumberStart; i <= productNumberEnd; i++) {
     let imagesForRecord = Math.floor(Math.random() * 8);
     for (let j = 0; j < imagesForRecord; j++) {
       let image = {
-        product: i,
+        product_id: i,
         imageName: faker.commerce.productDescription(),
         color: faker.commerce.color().split(' ').join('-'),
         url: urls[randomUrlIndex()],
