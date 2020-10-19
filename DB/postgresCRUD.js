@@ -1,8 +1,9 @@
 const { Sequelize, DataTypes } = require('sequelize');
 
-const sequelize = new Sequelize('carousel', 'postgres', 'hrr48', {
+const sequelize = new Sequelize('test', 'postgres', 'hrr48', {
   dialect: 'postgres',
-  storage: 'localhost:5432'
+  storage: 'localhost:5432',
+  logging: false
 })
 
 
@@ -16,19 +17,19 @@ const test = async () => {
 }
 
 
-const Product = sequelize.define('Product', {
-  productNumber : {
-    type: DataTypes.BIGINT,
-    allowNull: false,
-    unique: true
-  },
-  productName : {
-    type: DataTypes.STRING
-  }
-});
+// const Product = sequelize.define('Product', {
+//   product : {
+//     type: DataTypes.BIGINT,
+//     allowNull: false,
+//     unique: true
+//   },
+//   productName : {
+//     type: DataTypes.STRING
+//   }
+// });
 
 const Image = sequelize.define('Image', {
-  productNumber : {
+  product_id : {
     type: DataTypes.BIGINT,
     allowNull: false,
   },
@@ -47,25 +48,25 @@ const Image = sequelize.define('Image', {
   }
 });
 
-Product.hasMany(Image);
-Image.belongsTo(Product);
+// Product.hasMany(Image);
+// Image.belongsTo(Product);
 
 
-const createProduct = async (productNumber, productName) => {
-  try {
-    await Product.create({
-      productNumber: productNumber,
-      productName: productName
-    })
-  } catch (err) {
-    console.error(err);
-  }
-}
+// const createProduct = async (productNumber, productName) => {
+//   try {
+//     await Product.create({
+//       product: productNumber,
+//       productName: productName
+//     })
+//   } catch (err) {
+//     console.error(err);
+//   }
+// }
 
 const createImage = async (image) => {
   try {
     await Image.create({
-      ProductId: image.product,
+     procut_id: image.product,
       imageName: image.imageName,
       color: image.color,
       url: image.url,
@@ -76,7 +77,8 @@ const createImage = async (image) => {
   }
 }
 
+module.exports.connection = sequelize;
 module.exports.Image = Image;
-module.exports.Product = Product;
-module.exports.createProduct = createProduct;
+//module.exports.Product = Product;
+//module.exports.createProduct = createProduct;
 module.exports.createImage = createImage;
