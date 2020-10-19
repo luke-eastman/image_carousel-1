@@ -1,10 +1,10 @@
 const dataGenerator = require('./dataGenerator.js');
 const fs = require('fs');
 
-var writeStream = fs.createWriteStream('./imageCarouselData');
+var writeStream = fs.createWriteStream('./imageCarouselDataTest');
 
-const ENTRIES = 10000000;
-const STEP_COUNT = 100;
+const ENTRIES = 100;
+const STEP_COUNT = 10;
 
 const STEP = ENTRIES / STEP_COUNT;
 
