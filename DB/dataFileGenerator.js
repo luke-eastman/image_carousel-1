@@ -1,18 +1,16 @@
 const dataGenerator = require('./dataGenerator.js');
 const fs = require('fs');
 
-var writeStream = fs.createWriteStream('./imageCarouselDataTest');
+var writeStream = fs.createWriteStream('./imageCarouselData');
 
-const ENTRIES = 100;
-const STEP_COUNT = 10;
+const ENTRIES = 10000000;
+const STEP_COUNT = 1000;
 
 const STEP = ENTRIES / STEP_COUNT;
 
 (async () => {
   for (var i = 0; i < STEP_COUNT; i++) {
     var images = dataGenerator(i * STEP, (i + 1) * STEP);
-    var j = -1;
-
 
     const writeImage = (image) => {
       return new Promise((resolve) => {
