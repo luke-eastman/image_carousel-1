@@ -17,16 +17,16 @@ const test = async () => {
 }
 
 
-// const Product = sequelize.define('Product', {
-//   product : {
-//     type: DataTypes.BIGINT,
-//     allowNull: false,
-//     unique: true
-//   },
-//   productName : {
-//     type: DataTypes.STRING
-//   }
-// });
+const Product = sequelize.define('Product', {
+  product : {
+    type: DataTypes.BIGINT,
+    allowNull: false,
+    unique: true
+  },
+  productName : {
+    type: DataTypes.STRING
+  }
+});
 
 const Image = sequelize.define('Image', {
   product_id : {
@@ -48,20 +48,20 @@ const Image = sequelize.define('Image', {
   }
 });
 
-// Product.hasMany(Image);
-// Image.belongsTo(Product);
+Product.hasMany(Image);
+Image.belongsTo(Product);
 
 
-// const createProduct = async (productNumber, productName) => {
-//   try {
-//     await Product.create({
-//       product: productNumber,
-//       productName: productName
-//     })
-//   } catch (err) {
-//     console.error(err);
-//   }
-// }
+const createProduct = async (productNumber, productName) => {
+  try {
+    await Product.create({
+      product: productNumber,
+      productName: productName
+    })
+  } catch (err) {
+    console.error(err);
+  }
+}
 
 const createImage = async (image) => {
   try {
@@ -79,6 +79,6 @@ const createImage = async (image) => {
 
 module.exports.connection = sequelize;
 module.exports.Image = Image;
-//module.exports.Product = Product;
-//module.exports.createProduct = createProduct;
+module.exports.Product = Product;
+module.exports.createProduct = createProduct;
 module.exports.createImage = createImage;
