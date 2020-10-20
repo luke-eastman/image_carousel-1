@@ -52,35 +52,10 @@ Product.hasMany(Image);
 Image.belongsTo(Product);
 
 
-
-const seedProduct = async (productNumber, productName) => {
-  try {
-    await Product.create({
-      productNumber: productNumber,
-      productName: productName
-    })
-  } catch (err) {
-    console.error(err);
-  }
-}
-
-const seedImage = async (image) => {
-  try {
-    await Image.create({
-      product_id: image.product,
-      imageName: image.imageName,
-      color: image.color,
-      url: image.url,
-      alt: image.alt
-    });
-  } catch (err) {
-    console.error(err);
-  }
-}
-
 const ENTRIES = 10000000;
 const STEP_COUNT = 100;
 
+//sequelize.sync({force: true})
 sequelize.sync()
 .then(async (result) => {
   console.log('Done syncing, generating data...')

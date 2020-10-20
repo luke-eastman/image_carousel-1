@@ -3,4 +3,4 @@ bundle.js
 .DS_Store
 images
 populateImages.sh
-imageCarouselData
+imageCarouselData*
