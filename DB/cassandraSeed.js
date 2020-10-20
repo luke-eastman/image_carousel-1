@@ -1,7 +1,7 @@
 const cassandra = require('cassandra-driver');
 const lineReader = require('line-reader');
 const lineByLine = require('n-readlines');
-const liner = new lineByLine('./imageCarouselData');
+const liner = new lineByLine('./imageCarouselDataTest');
 
 
 const client = new cassandra.Client({
@@ -29,7 +29,7 @@ client.execute('USE carousel')
     line = line.toString();
     var image = JSON.parse(line);
 
-    if(count % 10000 === 0) {
+    if(count % 100000 === 0) {
       console.log(`starting batch ${batch++}...`)
     }
     var insertQuery = `INSERT INTO images (id, product_id, image_name, color, url, alt) VALUES (${count}, ${image.product_id}, '${image.image_name}', '${image.color}', '${image.url}', '${image.alt}')`;
