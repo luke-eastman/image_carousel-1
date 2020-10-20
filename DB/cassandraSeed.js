@@ -1,5 +1,7 @@
 const cassandra = require('cassandra-driver');
 const lineReader = require('line-reader');
+const lineByLine = require('n-readlines');
+const liner = new lineByLine('./imageCarouselData');
 
 
 const client = new cassandra.Client({
@@ -17,8 +19,28 @@ const query = 'CREATE TABLE images (id bigint PRIMARY KEY, '
   + 'alt text); ';
 
 client.execute('USE carousel')
-.then(client.execute('DROP TABLE images')
-.then(client.execute(query)
-.then(result => {
+//.then(client.execute(query)
+.then(async result => {
+  var count = 0;
+  var batch = 0;
+  let line;
 
-})));
+  while (line = liner.next()) {
+    line = line.toString();
+    var image = JSON.parse(line);
+
+    if(count % 10000 === 0) {
+      console.log(`starting batch ${batch++}...`)
+    }
+    var insertQuery = `INSERT INTO images (id, product_id, image_name, color, url, alt) VALUES (${count}, ${image.product_id}, '${image.image_name}', '${image.color}', '${image.url}', '${image.alt}')`;
+
+    await client.execute(insertQuery)
+    .catch( err => {
+      console.log(err)
+    })
+    count++;
+
+
+  }
+  client.shutdown();
+});

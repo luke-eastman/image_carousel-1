@@ -30,6 +30,7 @@
     "line-reader": "^0.4.0",
     "mongo": "^0.1.0",
     "mongoose": "^5.10.6",
+    "n-readlines": "^1.0.0",
     "nodemon": "^2.0.4",
     "npm": "^6.14.8",
     "pg": "^8.4.1",
