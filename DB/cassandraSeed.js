@@ -44,3 +44,5 @@ client.execute('USE carousel')
   }
   client.shutdown();
 });
+
+CREATE TABLE images (product_id bigint PRIMARY KEY, image_name text, color text, url text, alt text);
