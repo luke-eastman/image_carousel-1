@@ -14,7 +14,6 @@ const getImages = (image, callback) => {
   var query = `SELECT product_id, imagename, color, url, alt FROM images WHERE product_id = ${image}`;
   (async () => {
     const {rows} = await pool.query(query);
-    console.log(rows)
     var images = [];
     for (image of rows) {
       images.push({

@@ -80,6 +80,12 @@ app.delete('/products', (req, res) => {
   });
 })
 
+app.get('/*', (req, res) => {
+  console.log('hello')
+  console.log(path.join(__dirname, '/../dist'))
+  res.sendFile(path.join(__dirname, '/../dist/index.html'));
+})
+
 module.exports = app;
 
 
