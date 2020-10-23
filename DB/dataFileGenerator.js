@@ -15,7 +15,7 @@ const STEP = ENTRIES / STEP_COUNT;
 
     const writeImage = (image) => {
       return new Promise((resolve) => {
-        var imageCsv = `${count++}|${image.product_id}|${image.imageName}|${image.color}|${image.url}|${image.alt}\n`;
+        var imageCsv = `${image.product_id}|${image.imageName}|${image.color}|${image.url}|${image.alt}\n`;
         if (!writeStream.write(imageCsv)) {
           writeStream.once('drain', resolve)
         } else {
