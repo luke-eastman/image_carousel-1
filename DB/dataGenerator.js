@@ -6,7 +6,7 @@ const dataGenerator = (productNumberStart, productNumberEnd) => {
   let urls = imageUrlGenerator();
 
   for (let i = productNumberStart; i <= productNumberEnd; i++) {
-    let imagesForRecord = Math.floor(Math.random() * 8);
+    let imagesForRecord = Math.floor(Math.random() * 8) + 5;
     for (let j = 0; j < imagesForRecord; j++) {
       let image = {
         product_id: i,

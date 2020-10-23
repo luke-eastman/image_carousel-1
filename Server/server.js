@@ -1,6 +1,6 @@
 const express = require('express');
 const app = express();
-const db = require('../DB/crud.js');
+const db = require('../DB/postgresCRUD.js');
 const bodyParser = require('body-parser')
 
 const path = require('path');
@@ -14,6 +14,8 @@ app.get('/', (req, res) => {
 });
 
 app.get('/products/:product/', function(req, res) {
+  console.log('using postgres to get images for product', req.params.product)
+  console.time()
   var product = req.params.product;
   db.getImages(product, (err, result) => {
     if (err) {
@@ -22,6 +24,7 @@ app.get('/products/:product/', function(req, res) {
     } else {
       res.setHeader('Access-Control-Allow-Origin', '*');
       res.send(result);
+      console.timeEnd();
     }
   });
 });
@@ -75,6 +78,12 @@ app.delete('/products', (req, res) => {
       res.send(result);
     }
   });
+})
+
+app.get('/*', (req, res) => {
+  console.log('hello')
+  console.log(path.join(__dirname, '/../dist'))
+  res.sendFile(path.join(__dirname, '/../dist/index.html'));
 })
 
 module.exports = app;
