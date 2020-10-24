@@ -32,7 +32,7 @@ const getImages = (image, callback) => {
 }
 
 const createImage = (image, callback) => {
-  var query = `INSERT INTO images(product_id, imagename, color, url, alt) VALUES ('${image.product}', '${image.imageName}', '${image.color}', '${image.url}', '${image.alt}')`;
+  var query = `INSERT INTO images(product_id, imagename, color, url, alt) VALUES (${image.product_id}, '${image.imageName}', '${image.color}', '${image.url}', '${image.alt}')`;
   (async () => {
     var result = await pool.query(query);
     callback(null, result)
