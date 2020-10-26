@@ -28,11 +28,18 @@ const getImages = (image, callback) => {
   })().catch(err => {
     console.error(err);
     callback(err, null);
-  })
+  });
 }
 
 const createImage = (image, callback) => {
-
+  var query = `INSERT INTO images(product_id, imagename, color, url, alt) VALUES (${image.product_id}, '${image.imageName}', '${image.color}', '${image.url}', '${image.alt}')`;
+  (async () => {
+    var result = await pool.query(query);
+    callback(null, result)
+  })().catch(err => {
+    console.error(err);
+    callback(err, null);
+  });
 }
 
 const updateImage = (image, callback) => {

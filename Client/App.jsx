@@ -69,7 +69,6 @@ class ImageCarousel extends React.Component {
 
   getImagesForEndpoint() {
     var productID;
-    console.log(window.location.pathname)
     if(window.location.pathname.slice(1) === '') {
       productID = 1;
     } else {

@@ -1,6 +1,11 @@
+.env
 node_modules
 bundle.js
 .DS_Store
 images
 populateImages.sh
 imageCarouselData*
+newrelic.js
+artillerySampleData.csv
+random_products.csv
+newrelic_agent.log
