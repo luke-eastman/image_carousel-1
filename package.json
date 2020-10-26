@@ -7,7 +7,8 @@
     "test": "jest --verbose -u",
     "start": "nodemon ./Server/index.js",
     "dbSetup": "node DB/seed.js",
-    "build": "webpack --config webpack.config.js"
+    "build": "webpack --config webpack.config.js",
+    "db:seed": "node ./DB/seedFromFile.js"
   },
   "repository": {
     "type": "git",
