@@ -7,7 +7,8 @@
     "test": "jest --verbose -u",
     "start": "nodemon ./Server/index.js",
     "dbSetup": "node DB/seed.js",
-    "build": "webpack --config webpack.config.js"
+    "build": "webpack --config webpack.config.js",
+    "db:seed": "node ./DB/seedFromFile.js"
   },
   "repository": {
     "type": "git",
@@ -23,6 +24,7 @@
     "@babel/polyfill": "^7.11.5",
     "body-parser": "^1.19.0",
     "cassandra-driver": "^4.6.0",
+    "dotenv": "^8.2.0",
     "express": "^4.17.1",
     "faker": "^5.1.0",
     "fs": "0.0.1-security",

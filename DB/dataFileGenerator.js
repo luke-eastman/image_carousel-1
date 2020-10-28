@@ -1,9 +1,9 @@
 const dataGenerator = require('./dataGenerator.js');
 const fs = require('fs');
 
-var writeStream = fs.createWriteStream('./artillerySampleData.csv');
+var writeStream = fs.createWriteStream('./imageCarouselData.csv');
 
-const ENTRIES = 10000;
+const ENTRIES = 10000000;
 const STEP_COUNT = 1000;
 
 const STEP = ENTRIES / STEP_COUNT;

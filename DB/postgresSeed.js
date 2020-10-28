@@ -1,11 +1,10 @@
 const { Sequelize, DataTypes } = require('sequelize');
 const dataGenerator = require('./dataGenerator.js');
-const sequelize = new Sequelize('carousel', 'postgres', 'hrr48', {
+const sequelize = new Sequelize(process.env.POSTGRES_DB, process.env.POSTGRES_USER, process.env.POSTGRES_PW, {
   dialect: 'postgres',
-  storage: 'localhost:5432',
+  storage: host: process.env.POSTGRES_HOST + ':' + process.env.POSTGRES_PORT,
   logging: false
 })
-
 
 const test = async () => {
   try {
